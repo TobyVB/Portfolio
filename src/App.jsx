@@ -7,9 +7,21 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import { Homepage } from "./components/Homepage";
+import { SharedLayout } from "./layouts/SharedLayout";
 
-function App() {
-  return <div className="App"></div>;
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route
+      path="/"
+      element={<SharedLayout />}
+      // loader={mainLoader}
+    >
+      <Route index element={<Homepage />} />
+    </Route>
+  )
+);
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
-
-export default App;
