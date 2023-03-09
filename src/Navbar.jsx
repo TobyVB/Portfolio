@@ -10,6 +10,8 @@ const Navbar = () => {
         borderBottom: "1px solid white",
         width: "100%",
         padding: "1em 0",
+        zIndex: "1",
+        backdropFilter: "blur(2px)",
       }}
     >
       <div

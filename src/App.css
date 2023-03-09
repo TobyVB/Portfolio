@@ -1,11 +1,7 @@
-body {
-  background: rgba(0, 0, 0, 1);
-}
-
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -43,4 +39,36 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/*  */
+.parallax {
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layer1 {
+  transform: translateZ(0);
+}
+
+.layer2 {
+  transform: translateZ(-0.5px);
+  z-index: "-1";
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
 }
