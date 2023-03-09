@@ -8,7 +8,6 @@ const SharedLayout = () => {
     <div>
       <Navbar />
       <main>
-        test
         <Outlet />
       </main>
       <Footer />
