@@ -23,12 +23,22 @@ const Navbar = () => {
         }}
       >
         <NavLink to="/">Logo</NavLink>
-        <div style={{ display: "flex", gap: "3em" }}>
-          <NavLink>About</NavLink>
-          <NavLink>Projects</NavLink>
-          <NavLink>Resume</NavLink>
-          <NavLink>Blogs</NavLink>
-          <NavLink>Github</NavLink>
+        <div className="nav-links" style={{ display: "flex", gap: "3em" }}>
+          <span>
+            <NavLink>About</NavLink>
+          </span>
+          <span>
+            <NavLink>Projects</NavLink>
+          </span>
+          <span>
+            <NavLink>Resume</NavLink>
+          </span>
+          <span>
+            <NavLink>Blogs</NavLink>
+          </span>
+          <span>
+            <NavLink>Github</NavLink>
+          </span>
         </div>
       </div>
     </div>

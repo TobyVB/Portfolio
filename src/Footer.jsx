@@ -3,9 +3,9 @@ const Footer = () => {
   return (
     <div
       style={{
-        position: "absolute",
-        bottom: "0",
-        left: "0",
+        // position: "relative",
+        // bottom: "0",
+        // left: "0",
         width: "100%",
         zIndex: "1",
       }}

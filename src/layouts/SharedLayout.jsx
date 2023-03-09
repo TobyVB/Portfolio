@@ -21,10 +21,10 @@ const SharedLayout = () => {
           ></div>
           <div className="parallax-layer layer1" style={{ padding: "0 5em" }}>
             <Outlet />
+            <Footer />
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
