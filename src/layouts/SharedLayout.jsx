@@ -13,16 +13,16 @@ const SharedLayout = () => {
       <main
         style={{
           width: "100vw",
-          backgroundColor: "rgba(80, 180, 255, .85)",
+          // backgroundColor: "rgba(80, 180, 255, .85)",
         }}
       >
         <div className="parallax">
           <div
             className="parallax-layer layer2"
             style={{
-              opacity: "20%",
+              opacity: "25%",
               backgroundPosition: "center",
-              backgroundImage: "url(../../public/clouds.png)",
+              backgroundImage: "url(../../public/canyon.avif)",
               height: `${
                 contentRef.current !== undefined
                   ? contentRef.current.scrollHeight / 1.2
