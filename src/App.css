@@ -60,12 +60,18 @@
 }
 
 .layer1 {
+  /* transform: translateZ(0); */
+
+  /* -webkit-transform: translateZ(0); */
   transform: translateZ(0);
+
+  /* z-index: 4; */
 }
 
 .layer2 {
-  transform: translateZ(-0.5px);
-  z-index: "-1";
+  transform: translateZ(-1px) scale(2);
+  /* z-index: "-1"; */
+  background-size: cover;
 }
 
 h2 {

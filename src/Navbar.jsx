@@ -11,7 +11,8 @@ const Navbar = () => {
         width: "100%",
         padding: "1em 0",
         zIndex: "1",
-        backdropFilter: "blur(2px)",
+        background: "rgba(0,0,0,.65)",
+        backdropFilter: "blur(5px)",
       }}
     >
       <div
