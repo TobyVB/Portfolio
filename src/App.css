@@ -89,6 +89,9 @@ a.active {
     margin-top: 3em;
     gap: 1em;
   }
+  .nav-links-closed {
+    display: none;
+  }
   .nav-link-container {
     padding: 0 2em;
   }
@@ -99,10 +102,193 @@ a.active {
     display: flex;
     gap: 2em;
   }
+  .nav-links-closed {
+    flex-direction: row;
+    display: flex;
+    gap: 2em;
+  }
   .burger {
     display: none;
   }
   .nav-link-container {
     padding: 0 4em;
+  }
+  .nav-blocker {
+    display: none;
+  }
+}
+
+.nav-links {
+  animation-name: navAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.shrink {
+  animation-name: navAnimation2;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes navAnimation {
+  from {
+    /* font-size: 0; */
+    margin-top: -50vh;
+    opacity: 0;
+  }
+  to {
+    /* font-size: 1.25rem; */
+  }
+}
+@keyframes navAnimation2 {
+  from {
+    /* font-size: 1.25rem; */
+  }
+  to {
+    /* font-size: 0; */
+    margin-top: -50vh;
+    opacity: 0;
+  }
+}
+
+.hb1c {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transform: rotate(40deg);
+  transform-origin: top left;
+
+  animation-name: hb1cAnim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.hb2c {
+  width: 35px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 6px 0;
+  color: rgba(255, 255, 255, 0);
+
+  animation-name: hb2cAnim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.hb3c {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transform: rotate(320deg);
+  transform-origin: bottom left;
+
+  animation-name: hbc3Anim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.hb1o {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+
+  animation-name: hb1oAnim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.hb2o {
+  width: 35px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 6px 0;
+
+  animation-name: hb2oAnim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.hb3o {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+
+  animation-name: hb3oAnim;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes hb1oAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  to {
+  }
+}
+@keyframes hb2oAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 6px 0;
+    height: 5px;
+  }
+  to {
+  }
+}
+@keyframes hb3oAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  to {
+  }
+}
+/*  */
+@keyframes hb1cAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  to {
+    transform: rotate(40deg);
+    transform-origin: top left;
+  }
+}
+@keyframes hb2cAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    height: 5px;
+  }
+  to {
+    color: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes hb3cAnim {
+  from {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+  to {
+    transform: rotate(320deg);
+    transform-origin: bottom left;
   }
 }
