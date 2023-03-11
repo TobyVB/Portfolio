@@ -7,6 +7,14 @@ import { useEffect, useState, useRef } from "react";
 const SharedLayout = () => {
   const contentRef = useRef();
 
+  // cause a state change so the newly assigned contentRef
+  // scroll height that is passed into the layer's style is updated
+  // in the final render
+  const [update, setUpdate] = useState(false);
+  useEffect(() => {
+    setUpdate(true);
+  }, [contentRef]);
+
   return (
     <div>
       <Navbar />
