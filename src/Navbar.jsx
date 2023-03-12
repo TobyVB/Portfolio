@@ -7,20 +7,30 @@ import {
   UilWindow,
   UilFileAlt,
   UilPen,
+  UilBars,
+  UilTimes,
 } from "@iconscout/react-unicons";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [shrink, setShrink] = useState("");
+  const [fade, setFade] = useState("");
+
   const toggleNav = () => {
     if (navOpen === true) {
+      setFade("fade");
       setShrink("shrink");
       setTimeout(() => {
         setNavOpen((prev) => !prev);
         setShrink("");
-      }, 400);
+        setFade("");
+      }, 250);
     } else {
-      setNavOpen((prev) => !prev);
+      setFade("fade");
+      setTimeout(() => {
+        setNavOpen((prev) => !prev);
+        setFade("");
+      }, 250);
     }
 
     console.log("test");
@@ -102,14 +112,23 @@ const Navbar = () => {
               </NavLink>
             </span>
           </div>
-
-          {/* </div> */}
-          <span className="burger" onClick={toggleNav}>
-            {/* 🍔 */}
-            <div className={!navOpen ? `hb1o` : `hb1c`}></div>
-            <div className={!navOpen ? `hb2o` : `hb2c`}></div>
-            <div className={!navOpen ? `hb3o` : `hb3c`}></div>
-          </span>
+          <div>
+            {!navOpen ? (
+              <span
+                className={navOpen ? "burger " + fade : "burger2 " + fade}
+                onClick={fade === "" && toggleNav}
+              >
+                <UilBars size="30" color="white" />
+              </span>
+            ) : (
+              <span
+                className={navOpen ? "burger " + fade : "burger2 " + fade}
+                onClick={fade === "" && toggleNav}
+              >
+                <UilTimes size="30" color="white" />
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </>
