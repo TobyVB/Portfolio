@@ -63,31 +63,35 @@ const Navbar = () => {
           {/* <div className="nav-links" style={{ display: "flex", gap: "3em" }}> */}
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
-            <span>
+            <span className="nav-link">
               <NavLink>
                 <UilUser size="20" color="white" /> About
+                <div className="underline"></div>
               </NavLink>
             </span>
-            <span>
+            <span className="nav-link">
               <NavLink>
                 <UilWindow size="20" color="white" /> Projects
+                <div className="underline"></div>
               </NavLink>
             </span>
-            <span>
+            <span className="nav-link">
               <NavLink>
                 <UilFileAlt size="20" color="white" /> Resume
+                <div className="underline"></div>
               </NavLink>
             </span>
-            <span>
+            <span className="nav-link">
               <NavLink>
                 <UilPen size="20" color="white" /> Blogs
+                <div className="underline"></div>
               </NavLink>
             </span>
             <span
+              className="nav-link-git"
               style={{
                 // border: "2px solid white",
                 padding: ".25em 1em .2em 1em",
-                background: "rgb(80,42,95)",
                 borderRadius: "5px",
               }}
             >

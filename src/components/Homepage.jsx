@@ -5,6 +5,7 @@ const Homepage = () => {
   return (
     <div style={{ padding: "10em 0" }}>
       <div
+        className="section1"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -42,10 +43,10 @@ const Homepage = () => {
           image
         </div>
       </div>
-      <div style={{ paddingBottom: "10em" }}>
+      <div className="section2" style={{ paddingBottom: "10em" }}>
         <h1>LET ME INTRODUCE MYSELF</h1>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ textAlign: "left", width: "50%" }}>
+          <div style={{ textAlign: "left" }}>
             <p>
               I fell in love with programming and I have at least learnt
               something, I think… 🤷‍♂️
@@ -62,15 +63,15 @@ const Homepage = () => {
               React.js and Next.js
             </p>
           </div>
-          <div
-            style={{
-              border: "3px dashed red",
-              width: "400px",
-              height: "400px",
-            }}
-          >
-            image
-          </div>
+        </div>
+        <div
+          style={{
+            border: "3px dashed red",
+            width: "400px",
+            height: "400px",
+          }}
+        >
+          image
         </div>
       </div>
       <div>

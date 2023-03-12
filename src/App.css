@@ -96,6 +96,13 @@ a.active {
     padding: 0 2em;
     margin: 0;
   }
+  .section1 {
+    flex-direction: column;
+  }
+  .section2 {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 700px) {
   .nav-links {
@@ -190,4 +197,28 @@ a.active {
   to {
     opacity: 0;
   }
+}
+a.active:hover {
+  transition: 0.5s;
+  color: white;
+  /* color: orangered; */
+}
+.underline {
+  height: 3px;
+  width: 0%;
+  background: orangered;
+  transition: 0.5s;
+}
+.nav-link:hover .underline {
+  transition: 0.5s;
+  width: 100%;
+}
+.nav-link-git {
+  background-color: rgb(80, 42, 95);
+  transition: 0.25s;
+}
+.nav-link-git:hover {
+  background-color: rgb(103, 56, 124);
+  margin-top: -5px;
+  margin-bottom: 5px;
 }
