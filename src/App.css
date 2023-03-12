@@ -94,6 +94,7 @@ a.active {
   }
   .nav-link-container {
     padding: 0 2em;
+    margin: 0;
   }
 }
 @media screen and (min-width: 700px) {
@@ -110,11 +111,14 @@ a.active {
   .burger {
     display: none;
   }
+  .burger2 {
+    display: none;
+  }
   .nav-link-container {
     padding: 0 4em;
   }
-  .nav-blocker {
-    display: none;
+  svg {
+    margin: 0;
   }
 }
 
@@ -133,20 +137,16 @@ a.active {
 
 @keyframes navAnimation {
   from {
-    /* font-size: 0; */
     margin-top: -50vh;
     opacity: 0;
   }
   to {
-    /* font-size: 1.25rem; */
   }
 }
 @keyframes navAnimation2 {
   from {
-    /* font-size: 1.25rem; */
   }
   to {
-    /* font-size: 0; */
     margin-top: -50vh;
     opacity: 0;
   }

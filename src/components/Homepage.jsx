@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+
 const Homepage = () => {
   return (
     <div style={{ padding: "10em 0" }}>
@@ -11,7 +14,27 @@ const Homepage = () => {
         <div style={{ textAlign: "left" }}>
           <h1>Hello! 👋</h1>
           <h1>I'M TOBY VAN BAAST</h1>
-          <h2> Developer </h2>
+          <h2>
+            {" "}
+            <TypeAnimation
+              sequence={[
+                "Developer", // Types 'One'
+                1000, // Waits 1s
+                "Assassin", // Deletes 'One' and types 'Two'
+                1000, // Waits 1s
+                "Spiritual Conquistador", // Types 'Three' without deleting 'Two'
+                1000, // Waits 1s
+                () => {
+                  console.log("Done typing!"); // Place optional callbacks anywhere in the array
+                },
+              ]}
+              wrapper="div"
+              cursor={false}
+              repeat={Infinity}
+              style={{ fontSize: "1em" }}
+              speed="10"
+            />{" "}
+          </h2>
         </div>
         <div
           style={{ border: "3px dashed red", height: "400px", width: "400px" }}

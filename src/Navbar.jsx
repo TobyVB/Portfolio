@@ -39,21 +39,6 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="nav-blocker"
-        style={{
-          background: "black",
-          padding: "1.2em 0",
-          position: "absolute",
-          zIndex: "2",
-          width: "60vw",
-          left: "20vw",
-          fontSize: "1rem",
-          color: "rgba(0,0,0,0)",
-        }}
-      >
-        <span>filler</span>
-      </div>
-      <div
         style={{
           position: "absolute",
           top: "0",
@@ -62,7 +47,7 @@ const Navbar = () => {
           width: "100%",
           padding: "1em 0",
           zIndex: "1",
-          background: "rgba(0,0,0,1)",
+          background: "rgba(0,0,0,.3)",
           backdropFilter: "blur(5px)",
         }}
       >
@@ -112,23 +97,22 @@ const Navbar = () => {
               </NavLink>
             </span>
           </div>
-          <div>
-            {!navOpen ? (
-              <span
-                className={navOpen ? "burger " + fade : "burger2 " + fade}
-                onClick={fade === "" && toggleNav}
-              >
-                <UilBars size="30" color="white" />
-              </span>
-            ) : (
-              <span
-                className={navOpen ? "burger " + fade : "burger2 " + fade}
-                onClick={fade === "" && toggleNav}
-              >
-                <UilTimes size="30" color="white" />
-              </span>
-            )}
-          </div>
+
+          {!navOpen ? (
+            <span
+              className={navOpen ? "burger " + fade : "burger2 " + fade}
+              onClick={fade === "" && toggleNav}
+            >
+              <UilBars size="30" color="white" />
+            </span>
+          ) : (
+            <span
+              className={navOpen ? "burger " + fade : "burger2 " + fade}
+              onClick={fade === "" && toggleNav}
+            >
+              <UilTimes size="30" color="white" />
+            </span>
+          )}
         </div>
       </div>
     </>
