@@ -4,44 +4,20 @@
   /* padding: 2rem; */
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 /*  */
+/* ::-webkit-scrollbar {
+  background-color: rgba(255, 69, 0, 0.2);
+  width: 6px;
+  z-index: 100;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 69, 0, 1);
+  border-radius: 10px;
+} */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .parallax {
   height: 100vh;
 
@@ -96,12 +72,11 @@ a.active {
     padding: 0 2em;
     margin: 0;
   }
-  .section1 {
-    flex-direction: column;
-  }
-  .section2 {
+  .section {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10em;
   }
 }
 @media screen and (min-width: 700px) {
@@ -126,6 +101,16 @@ a.active {
   }
   svg {
     margin: 0;
+  }
+  .section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10em;
+  }
+  .homepage-introduction {
+    width: 50%;
+    max-width: 400px;
   }
 }
 
@@ -206,7 +191,6 @@ a.active:hover {
 .underline {
   height: 3px;
   width: 0%;
-  background: orangered;
   transition: 0.5s;
 }
 .nav-link:hover .underline {
@@ -221,4 +205,25 @@ a.active:hover {
   background-color: rgb(103, 56, 124);
   margin-top: -5px;
   margin-bottom: 5px;
+}
+.clr-1 {
+  color: orangered;
+}
+.bg-1 {
+  background: orangered;
+}
+.homepage-pic1 {
+  border: 3px dashed red;
+  height: 400px;
+  width: 400px;
+  margin: 1em auto;
+}
+.homepage-pic2 {
+  border: 3px dashed red;
+  height: 300px;
+  width: 300px;
+  margin: 1em auto;
+}
+h3 div {
+  height: 1rem;
 }
