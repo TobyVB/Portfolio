@@ -15,7 +15,7 @@ const Homepage = () => {
         <div style={{ textAlign: "left" }}>
           <h1>Hello! 👋</h1>
           <h1>I'M TOBY VAN BAAST</h1>
-          <h2>
+          <h2 style={{ display: "flex" }}>
             {" "}
             <TypeAnimation
               sequence={[
@@ -34,7 +34,8 @@ const Homepage = () => {
               repeat={Infinity}
               style={{ fontSize: "1em" }}
               speed="10"
-            />{" "}
+            />
+            <span style={{ color: "rgba(0,0,0,0)" }}>.</span>
           </h2>
         </div>
         <div
