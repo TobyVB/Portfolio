@@ -11,8 +11,9 @@ const Footer = () => {
       }}
     >
       <div
+        className="footer-inner-container"
         style={{
-          padding: "0 5em",
+          // padding: "0 5em",
           display: "flex",
           justifyContent: "space-between",
         }}

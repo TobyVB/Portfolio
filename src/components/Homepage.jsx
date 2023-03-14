@@ -5,9 +5,7 @@ import Footer from "../Footer.jsx";
 export default function Homepage() {
   const contentRef = useRef();
   const scrollBody = useRef();
-  const buttonRef = useRef();
-
-  const [scrollH, setScrollH] = useState();
+  const text1ref = useRef();
 
   // cause a state change so the newly assigned contentRef
   // scroll height that is passed into the layer's style is updated
@@ -17,43 +15,115 @@ export default function Homepage() {
     setUpdate(true);
   }, [contentRef]);
 
-  function getScrollHeight() {
-    // setScrollH(scrollBody.current.scrollTop);
-    // console.log("scrollHeight" + scrollH);
-    // setUpdate((prev) => !prev);
-  }
+  const [textss, setTextss] = useState("textLeave");
+  const [text1, setText1] = useState("textLeave");
+  const [text2, setText2] = useState("textLeave");
+  const [text3, setText3] = useState("textLeave");
+  const [text4, setText4] = useState("textLeave");
+  // const [textAdded, setTextAdded] = useState(false);
 
+  const [dist1, setDist1] = useState(100);
   useEffect(() => {
+    let textAdded = false;
     const interval = setInterval(() => {
-      console.log(scrollBody.current.scrollTop);
-    }, 150);
+      const texts = document.querySelector(".homepage-introduction");
+      const textsLoc = texts.getBoundingClientRect().top;
+      const scrollLoc = scrollBody.current.scrollTop - 150;
+      console.log("scroll " + scrollLoc + " text: " + textsLoc);
+      if (textsLoc > scrollLoc) {
+        if (textAdded === true) {
+          moveOutText();
+          // setTextAdded(false);
+          textAdded = false;
+        }
+      } else if (textsLoc < scrollLoc) {
+        if (textAdded === false) {
+          moveInText();
+          // setTextAdded(true);
+          textAdded = true;
+        }
+      }
+    }, 250);
     return () => clearInterval(interval);
   }, []);
 
+  // when parent div is below target location
+  // use a function to create a sequenced chain reaction
+  // of adding animations
+
+  // when pare div is above target location
+  //  use a function to create a sequenced chain reaction
+  // for removing animations in reverse order
+
+  function moveInText() {
+    setTextss("textEnter");
+    // addClass
+    // setTimeout(() => {
+    //   setText1("textEnter");
+    // }, 250);
+    // setTimeout(() => {
+    //   setText2("textEnter");
+    // }, 500);
+    // setTimeout(() => {
+    //   setText3("textEnter");
+    // }, 750);
+    // setTimeout(() => {
+    //   setText4("textEnter");
+    // }, 1000);
+  }
+  function moveOutText() {
+    setTextss("textLeave");
+    // setTimeout(() => {
+    //   setText1("textLeave");
+    // }, 250);
+    // setTimeout(() => {
+    //   setText2("textLeave");
+    // }, 500);
+    // setTimeout(() => {
+    //   setText3("textLeave");
+    // }, 750);
+    // setTimeout(() => {
+    //   setText4("textLeave");
+    // }, 1000);
+  }
+
   function Introduction() {
     return (
-      <div
-        className="homepage-introduction"
-        style={{
-          textAlign: "left",
-          fontSize: "1.25rem",
-        }}
-      >
-        <p>
-          I fell in love with programming and I have at least learnt something,
-          I think… 🤷‍♂️
-        </p>
-        <p>I am fluent in classics like C++, Javascript and Python.</p>
-        <p>
-          My field of Interest's are building new Web Technologies and Products
-          and also in areas related to Deep Learning and Natural Launguage
-          Processing.
-        </p>
-        <p>
-          Whenever possible, I also apply my passion for developing products
-          with Node.js and Modern Javascript Library and Frameworks like
-          React.js and Next.js
-        </p>
+      <div style={{ overflow: "hidden" }}>
+        <div
+          className={`homepage-introduction`}
+          style={{
+            textAlign: "left",
+            fontSize: "1.25rem",
+            // width: "100%",
+          }}
+        >
+          <div className={`${textss}`}>
+            <div className={`${text1}`}>
+              <p>
+                I fell in love with programming and I have at least learnt
+                something, I think… 🤷‍♂️
+              </p>
+            </div>
+            <div className={`${text2}`}>
+              <p>I am fluent in classics like C++, Javascript and Python.</p>
+            </div>
+            <div className={`${text3}`}>
+              <p>
+                My field of Interest's are building new Web Technologies and
+                Products and also in areas related to Deep Learning and Natural
+                Launguage Processing.
+              </p>
+            </div>
+            <div className={`${text4}`}>
+              <p>
+                Whenever possible, I also apply my passion for developing
+                products with Node.js and Modern Javascript Library and
+                Frameworks like React.js and Next.js
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -78,7 +148,7 @@ export default function Homepage() {
           ]}
           wrapper="div"
           cursor={false}
-          repeat={Infinity}
+          // repeat={Infinity}
           style={{ fontSize: "1.5rem", color: "orangered", fontWeight: "400" }}
           speed="10"
         />
@@ -87,14 +157,6 @@ export default function Homepage() {
   }
   return (
     <div>
-      <button
-        className="track-btn"
-        ref={buttonRef}
-        onClick={() => getScrollHeight()}
-        style={{ zIndex: "30", position: "fixed", left: "50%", top: "50%" }}
-      >
-        click
-      </button>
       <div ref={scrollBody} className="parallax">
         <div
           className="parallax-layer layer2"
@@ -104,7 +166,7 @@ export default function Homepage() {
             backgroundImage: "url(../../public/canyon.avif)",
             height: `${
               contentRef.current !== undefined
-                ? contentRef.current.scrollHeight / 1
+                ? contentRef.current.scrollHeight / 1.7
                 : 400
             }px`,
           }}
