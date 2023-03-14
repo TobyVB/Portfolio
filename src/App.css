@@ -227,3 +227,9 @@ a.active:hover {
 h3 div {
   height: 1rem;
 }
+.green {
+  color: yellowgreen;
+}
+.red {
+  color: red;
+}
