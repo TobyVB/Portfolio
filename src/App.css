@@ -57,6 +57,9 @@ a.active {
     padding: 0 2em;
     margin: 0;
   }
+  .parallax-layer {
+    padding: 0 2em;
+  }
   .section {
     display: flex;
     flex-direction: column;
@@ -102,13 +105,19 @@ a.active {
   svg {
     margin: 0;
   }
+  .parallax-layer {
+    padding: 0 5em;
+  }
   .section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10em;
   }
-  .homepage-introduction {
+  .homepage-introduction,
+  .homepage-introduction2,
+  .homepage-introduction3,
+  .homepage-introduction4 {
     max-width: 400px;
   }
   .homepage-pic1 {
@@ -233,41 +242,46 @@ h3 div {
 .red {
   color: red;
 }
-
+/* ############################### */
 .textEnter {
-  /* margin-right: 0vw; */
+  color: rgba(255, 255, 255, 1);
   margin-left: 0%;
   animation-name: textEnterAnim;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 @keyframes textEnterAnim {
   from {
-    /* margin-right: 100vw; */
+    color: rgba(255, 255, 255, 0);
     margin-left: -100%;
   }
   to {
-    /* margin-right: 0vw; */
+    color: rgba(255, 255, 255, 1);
     margin-left: 0%;
   }
 }
 .textLeave {
-  /* margin-right: 100vw; */
+  color: rgba(255, 255, 255, 0);
   margin-left: -100%;
   animation-name: textLeaveAnim;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 
 @keyframes textLeaveAnim {
   from {
-    /* margin-right: 0vw; */
+    color: rgba(255, 255, 255, 1);
     margin-left: 0%;
   }
   to {
-    /* margin-right: 100vw; */
+    color: rgba(255, 255, 255, 0);
     margin-left: -100%;
   }
 }
+.textstarter {
+  color: rgba(255, 255, 255, 0);
+  margin-left: -100%;
+}
+/* ############################# */
