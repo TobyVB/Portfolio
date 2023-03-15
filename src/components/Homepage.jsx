@@ -124,7 +124,7 @@ export default function Homepage() {
         <div style={{ padding: "10em 0" }}>
           <div className="section">
             <div style={{ textAlign: "left" }}>
-              <h1>Hello! 👋</h1>
+              <h2>Hello! 👋</h2>
               <h2>
                 I'M <span className="clr-1">TOBY VANBAAST</span>
               </h2>
@@ -134,13 +134,13 @@ export default function Homepage() {
               image
             </div>
           </div>
-          <h1>LET ME INTRODUCE MYSELF</h1>
+          <h2>LET ME INTRODUCE MYSELF</h2>
           <div className="section">
             <Introduction />
             <div className="homepage-pic2">image</div>
           </div>
           <div>
-            <h1>FIND ME ON</h1>
+            <h2>FIND ME ON</h2>
             <div>work profiles/ social media</div>
           </div>
         </div>
