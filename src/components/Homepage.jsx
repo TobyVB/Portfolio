@@ -1,6 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Footer from "../Footer.jsx";
+import {
+  UilGithub,
+  UilTwitter,
+  UilLinkedin,
+  UilFacebook,
+} from "@iconscout/react-unicons";
 
 export default function Homepage() {
   const contentRef = useRef();
@@ -14,7 +20,6 @@ export default function Homepage() {
     setUpdate(true);
   }, [contentRef]);
 
-  const [dist1, setDist1] = useState(100);
   const [added, setAdded] = useState(false);
   const [textClass, setTextClass] = useState("textLeave");
   useEffect(() => {
@@ -38,25 +43,16 @@ export default function Homepage() {
     return () => clearInterval(interval);
   }, []);
 
-  // when parent div is below target location
-  // use a function to create a sequenced chain reaction
-  // of adding animations
-
-  // when pare div is above target location
-  //  use a function to create a sequenced chain reaction
-  // for removing animations in reverse
-
   function Introduction() {
     return (
-      <div style={{ overflow: "hidden" }}>
+      <div
+        style={{
+          overflow: "hidden",
+        }}
+      >
         <div
+          style={{ margin: "0 auto" }}
           className={`homepage-introduction ${textClass}`}
-          style={{
-            textAlign: "left",
-            fontSize: "1.25rem",
-            // marginLeft: `-${dist1}%`,
-            width: "100%",
-          }}
         >
           <p>
             I fell in love with programming and I have at least learnt
@@ -82,15 +78,15 @@ export default function Homepage() {
       <h3>
         <TypeAnimation
           sequence={[
-            "Developer", // Types 'One'
+            "Developer",
             1000, // Waits 1s
-            "Freelancer", // Deletes 'One' and types 'Two'
+            "Freelancer",
             1000, // Waits 1s
-            "Videogame Maker", // Types 'Three' without deleting 'Two'
+            "Videogame Maker",
             1000, // Waits 1s
-            "Enthusiast", // Types 'Three' without deleting 'Two'
+            "Enthusiast", //
             1000, // Waits 1s
-            "Digital Artist", // Types 'Three' without deleting 'Two'
+            "Digital Artist",
             1000, // Waits 1s
             // () => {
             //   console.log("Done typing!"); // Place optional callbacks anywhere in the array
@@ -99,7 +95,7 @@ export default function Homepage() {
           wrapper="div"
           cursor={false}
           repeat={Infinity}
-          style={{ fontSize: "1.5rem", color: "orangered", fontWeight: "400" }}
+          style={{ fontSize: "2rem", color: "orangered", fontWeight: "400" }}
           speed="10"
         />
       </h3>
@@ -115,23 +111,43 @@ export default function Homepage() {
           backgroundImage: "url(../../public/canyon.avif)",
           height: `${
             contentRef.current !== undefined
-              ? contentRef.current.scrollHeight / 1.7
+              ? contentRef.current.scrollHeight / 1
               : 400
           }px`,
         }}
       ></div>
       <div ref={contentRef} className="parallax-layer layer1">
-        <div style={{ padding: "10em 0" }}>
+        <div style={{ padding: "10em 0 5em 0" }}>
           <div className="section">
-            <div style={{ textAlign: "left" }}>
-              <h2>Hello! 👋</h2>
-              <h2>
-                I'M <span className="clr-1">TOBY VANBAAST</span>
+            <div style={{ margin: "0 1em", textAlign: "left" }}>
+              <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
+                Hello! 👋
+              </h2>
+              <h2
+                className="homepage-jumbo-text"
+                style={{ marginBottom: "2em" }}
+              >
+                I'M{" "}
+                <span className="clr-1" style={{ fontWeight: "600" }}>
+                  TOBY VANBAAST
+                </span>
               </h2>
               <TypeText />
             </div>
-            <div style={{ marginTop: "3em" }} className="homepage-pic1">
-              image
+            <div
+              style={{
+                marginTop: "3em",
+                backgroundImage: "url(../../public/tobyvb.jpg)",
+                backgroundPosition: "center",
+                backgroundSize: "100%",
+                borderRadius: "100%",
+                height: "250px",
+                width: "250px",
+                // border: "2px dotted red"
+              }}
+              className="homepage-pic1"
+            >
+              {/* image */}
             </div>
           </div>
           <h2>LET ME INTRODUCE MYSELF</h2>
@@ -140,8 +156,24 @@ export default function Homepage() {
             <div className="homepage-pic2">image</div>
           </div>
           <div>
-            <h2>FIND ME ON</h2>
-            <div>work profiles/ social media</div>
+            <h2 style={{ marginBottom: "0" }}>FIND ME ON</h2>
+            <p style={{ margin: "0 auto 3em auto" }}>
+              Feel free to <span className="clr-1">connect</span> with me
+            </p>
+            <div className="homepage-icons">
+              <div className="icon-bg">
+                <UilGithub size="30" color="orangered" />
+              </div>
+              <div className="icon-bg">
+                <UilTwitter size="30" color="orangered" />
+              </div>
+              <div className="icon-bg">
+                <UilLinkedin size="30" color="orangered" />
+              </div>
+              <div className="icon-bg">
+                <UilFacebook size="30" color="orangered" />
+              </div>
+            </div>
           </div>
         </div>
         <Footer />

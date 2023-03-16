@@ -9,12 +9,27 @@
   display: none;
 }
 
+.nav-link-outer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.nav-link-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+}
+
 .parallax {
   height: 100vh;
-
   overflow-x: hidden;
-  overflow-y: auto;
-
+  /* overflow-y: auto; */
   perspective: 1px;
 }
 
@@ -43,12 +58,29 @@ h2 {
 a.active {
   color: white;
 }
+.icon-bg {
+  margin: 0 1em;
+  padding: 0.65em 0.75em 0.35em 0.75em;
+  border-radius: 100%;
+  background: white;
+}
+.homepage-introduction {
+  text-align: left;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 400px;
+}
+.homepage-icons {
+  display: inline-flex;
+}
+
 @media screen and (max-width: 700px) {
   .nav-links {
     display: flex;
     flex-direction: column;
     margin-top: 3em;
     gap: 1em;
+    font-size: 1.35rem;
   }
   .nav-links-closed {
     display: none;
@@ -63,11 +95,10 @@ a.active {
   .section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 10em;
+    justify-content: space-around;
+    margin-bottom: 2em;
   }
   .homepage-pic1 {
-    border: 3px dashed red;
     height: 70vw;
     width: 70vw;
     margin: 1em auto;
@@ -80,6 +111,12 @@ a.active {
   }
   .footer-inner-container {
     flex-direction: column;
+  }
+  .homepage-icons {
+    margin-left: -0.6em;
+  }
+  .homepage-jumbo-text {
+    font-size: 1.75rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -111,17 +148,10 @@ a.active {
   .section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 10em;
   }
-  .homepage-introduction,
-  .homepage-introduction2,
-  .homepage-introduction3,
-  .homepage-introduction4 {
-    max-width: 400px;
-  }
   .homepage-pic1 {
-    border: 3px dashed red;
     height: 400px;
     width: 400px;
     margin: 1em 0;
@@ -223,9 +253,9 @@ a.active:hover {
   transition: 0.25s;
 }
 .nav-link-git:hover {
-  background-color: rgb(103, 56, 124);
-  margin-top: -5px;
-  margin-bottom: 5px;
+  background-color: rgb(98, 53, 118);
+  margin-top: -2px;
+  margin-bottom: 2px;
 }
 .clr-1 {
   color: orangered;

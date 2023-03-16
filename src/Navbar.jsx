@@ -38,29 +38,9 @@ const Navbar = () => {
 
   return (
     <>
-      <div
-        style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          // borderBottom: "1px solid white",
-          width: "100%",
-          padding: "1em 0",
-          zIndex: "1",
-          background: "rgba(0,0,0,.3)",
-          backdropFilter: "blur(5px)",
-        }}
-      >
-        <div
-          className="nav-link-container"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            fontSize: "1.25rem",
-          }}
-        >
+      <div className="nav-link-outer-container">
+        <div className="nav-link-container">
           <NavLink to="/">TV</NavLink>
-          {/* <div className="nav-links" style={{ display: "flex", gap: "3em" }}> */}
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
             <span className="nav-link">
@@ -90,9 +70,8 @@ const Navbar = () => {
             <span
               className="nav-link-git"
               style={{
-                // border: "2px solid white",
-                padding: ".25em 1em .2em 1em",
                 borderRadius: "5px",
+                boxShadow: "0px 0px 2px orangered",
               }}
             >
               <NavLink>
