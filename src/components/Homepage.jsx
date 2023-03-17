@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Footer from "../Footer.jsx";
 import {
   UilGithub,
   UilTwitter,
@@ -9,40 +8,33 @@ import {
 } from "@iconscout/react-unicons";
 
 export default function Homepage() {
-  const contentRef = useRef();
   const scrollBody = useRef();
-
-  // cause a state change so the newly assigned contentRef
-  // scroll height that is passed into the layer's style is updated
-  // in the final render
-  const [update, setUpdate] = useState(false);
-  useEffect(() => {
-    setUpdate(true);
-  }, [contentRef]);
-
+  const [background, setBackground] = useState("homepage-bg");
   const [added, setAdded] = useState(false);
-  const [textClass, setTextClass] = useState("textLeave");
+  const [textClass, setTextClass] = useState("textstarter");
   useEffect(() => {
     const interval = setInterval(() => {
       const texts = document.querySelector(".homepage-introduction");
       const textsLoc = texts.getBoundingClientRect().top;
       const scrollLoc = scrollBody.current.scrollTop - 150;
       console.log("scroll " + scrollLoc + " text: " + textsLoc);
-      if (textsLoc > scrollLoc) {
-        if (!added) {
+      if (textsLoc > scrollLoc + 700) {
+        if (added) {
           setTextClass("textLeave");
-          setAdded(true);
+          setBackground("homepage-bg");
+          setAdded(false);
         }
-      } else if (textsLoc < scrollLoc && scrollLoc - textsLoc < 1000) {
+      } else if (textsLoc < scrollLoc + 700 && scrollLoc - textsLoc < 1000) {
         if (!added) {
           setTextClass("textEnter");
-          setAdded(false);
+          setBackground("homepage-bg-after");
+          setAdded(true);
         }
       }
     }, 250);
     return () => clearInterval(interval);
   }, []);
-
+  // ############################################################
   function Introduction() {
     return (
       <div
@@ -102,81 +94,108 @@ export default function Homepage() {
     );
   }
   return (
-    <div ref={scrollBody} className="parallax">
+    <div ref={scrollBody}>
       <div
-        className="parallax-layer layer2"
+        className={background}
         style={{
           opacity: "25%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../public/canyon.avif)",
-          height: `${
-            contentRef.current !== undefined
-              ? contentRef.current.scrollHeight / 1
-              : 400
-          }px`,
+          backgroundImage: "url(../../canyon.avif)",
+          display: "block",
+          position: "fixed",
+          height: "100vh",
+          width: "100vw",
+          zIndex: "-1",
         }}
       ></div>
-      <div ref={contentRef} className="parallax-layer layer1">
-        <div style={{ padding: "10em 0 5em 0" }}>
-          <div className="section">
-            <div style={{ margin: "0 1em", textAlign: "left" }}>
-              <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
-                Hello! 👋
-              </h2>
-              <h2
-                className="homepage-jumbo-text"
-                style={{ marginBottom: "2em" }}
-              >
-                I'M{" "}
-                <span className="clr-1" style={{ fontWeight: "600" }}>
-                  TOBY VANBAAST
-                </span>
-              </h2>
-              <TypeText />
-            </div>
+      {/* ######################################################### */}
+      <div style={{ padding: "10em 0 5em 0" }}>
+        <div className="section">
+          <div style={{ margin: "0 1em", textAlign: "left" }}>
+            <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
+              Hello! 👋
+            </h2>
+            <h2 className="homepage-jumbo-text" style={{ marginBottom: "2em" }}>
+              I'M{" "}
+              <span className="clr-1" style={{ fontWeight: "600" }}>
+                TOBY VANBAAST
+              </span>
+            </h2>
+            <TypeText />
+          </div>
+          <div
+            className="homepage-pic2 breathing"
+            style={{
+              backgroundImage: "url(../../Online-world-amico.png)",
+              height: "350px",
+              width: "350px",
+              backgroundSize: "100%",
+            }}
+          ></div>
+        </div>
+        <h2>LET ME INTRODUCE MYSELF</h2>
+        <div className="section2">
+          <Introduction />
+
+          <div
+            style={{
+              marginTop: "3em",
+
+              borderRadius: "100%",
+              height: "250px",
+              width: "250px",
+              // border: "2px dotted red"
+              background: "rgba(255, 69, 0, .5)",
+              // border: "1px solid orangered",
+            }}
+            className="homepage-pic1"
+          >
             <div
+              className="portfolioAnim"
               style={{
-                marginTop: "3em",
-                backgroundImage: "url(../../public/tobyvb.jpg)",
-                backgroundPosition: "center",
-                backgroundSize: "100%",
                 borderRadius: "100%",
                 height: "250px",
                 width: "250px",
-                // border: "2px dotted red"
+                border: "5px dashed orangered",
+                marginLeft: "-5.5px",
+                marginTop: "-5px",
               }}
-              className="homepage-pic1"
-            >
-              {/* image */}
+            ></div>
+            <div
+              style={{
+                marginTop: "-250px",
+                borderRadius: "100%",
+                height: "246px",
+                width: "246px",
+                backgroundImage: "url(../../Tobyvb1-no-bg.png)",
+                backgroundPosition: "center",
+                backgroundSize: "100%",
+              }}
+            ></div>
+            {/* image */}
+          </div>
+        </div>
+        <div>
+          <h2 style={{ marginBottom: "0" }}>FIND ME ON</h2>
+          <p style={{ margin: "0 auto 3em auto" }}>
+            Feel free to <span className="clr-1">connect</span> with me
+          </p>
+          <div className="homepage-icons">
+            <div className="icon-bg">
+              <UilGithub size="30" color="orangered" />
             </div>
-          </div>
-          <h2>LET ME INTRODUCE MYSELF</h2>
-          <div className="section">
-            <Introduction />
-            <div className="homepage-pic2">image</div>
-          </div>
-          <div>
-            <h2 style={{ marginBottom: "0" }}>FIND ME ON</h2>
-            <p style={{ margin: "0 auto 3em auto" }}>
-              Feel free to <span className="clr-1">connect</span> with me
-            </p>
-            <div className="homepage-icons">
-              <div className="icon-bg">
-                <UilGithub size="30" color="orangered" />
-              </div>
-              <div className="icon-bg">
-                <UilTwitter size="30" color="orangered" />
-              </div>
-              <div className="icon-bg">
-                <UilLinkedin size="30" color="orangered" />
-              </div>
-              <div className="icon-bg">
-                <UilFacebook size="30" color="orangered" />
-              </div>
+            <div className="icon-bg">
+              <UilTwitter size="30" color="orangered" />
+            </div>
+            <div className="icon-bg">
+              <UilLinkedin size="30" color="orangered" />
+            </div>
+            <div className="icon-bg">
+              <UilFacebook size="30" color="orangered" />
             </div>
           </div>
         </div>
-        <Footer />
+        {/* ######################################################### */}
       </div>
     </div>
   );

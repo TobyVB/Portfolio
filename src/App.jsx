@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import {
   Route,
@@ -7,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Homepage from "./components/Homepage";
+import About from "./components/About";
 import SharedLayout from "./layouts/SharedLayout";
 
 const router = createBrowserRouter(
@@ -17,6 +17,9 @@ const router = createBrowserRouter(
       // loader={mainLoader}
     >
       <Route index element={<Homepage />} />
+      <Route path="about" element={<About />} />
+      {/* <Route path="projects" element={<Projects />} />
+      <Route path="resume" element={<Resume />} /> */}
     </Route>
   )
 );

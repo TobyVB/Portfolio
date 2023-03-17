@@ -44,7 +44,7 @@ const Navbar = () => {
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
             <span className="nav-link">
-              <NavLink>
+              <NavLink to="/about">
                 <UilUser size="20" color="white" /> About
                 <div className="underline bg-1"></div>
               </NavLink>
