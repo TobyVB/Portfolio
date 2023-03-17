@@ -1,8 +1,26 @@
 import { useEffect, useState, useRef } from "react";
+import GitHubCalendar from "react-github-calendar";
 
 export default function About() {
   const scrollBody = useRef();
   const contentRef = useRef();
+
+  //   const selectLastHalfYear = (contributions) => {
+  //     const currentYear = new Date().getFullYear();
+  //     const currentMonth = new Date().getMonth();
+  //     const shownMonths = 6;
+
+  //     return contributions.filter((day) => {
+  //       const date = new Date(day.date);
+  //       const monthOfDay = date.getMonth();
+
+  //       return (
+  //         date.getFullYear() === currentYear &&
+  //         monthOfDay > currentMonth - shownMonths &&
+  //         monthOfDay <= currentMonth
+  //       );
+  //     });
+  //   };
 
   // skills data
   const skillData = [
@@ -30,7 +48,6 @@ export default function About() {
         <div
           className="about-item"
           style={{
-            border: "1px solid orangeRed",
             borderRadius: "5px",
             margin: "0 auto",
           }}
@@ -47,7 +64,6 @@ export default function About() {
         <div
           className="about-item"
           style={{
-            border: "1px solid orangeRed",
             borderRadius: "5px",
           }}
         >
@@ -80,6 +96,7 @@ export default function About() {
                 fontSize: "1.25rem",
                 textAlign: "left",
                 margin: "0 auto",
+                width: "90%",
               }}
             >
               <h2 style={{ textAlign: "center" }}>Who am I?</h2>
@@ -102,8 +119,8 @@ export default function About() {
             <div
               style={{
                 backgroundImage: "url(../../Innovation-rafiki.png)",
-                height: "450px",
-                width: "450px",
+                height: "400px",
+                width: "400px",
                 backgroundSize: "100%",
                 margin: "0 auto",
                 backgroundRepeat: "no-repeat",
@@ -126,6 +143,14 @@ export default function About() {
             <div className="about-items-container">
               <Tools />
             </div>
+          </div>
+          <div style={{ width: "80%", margin: "0 auto" }}>
+            <h2>Git Activity</h2>
+            <GitHubCalendar
+              username="TobyVB"
+              color="orangered"
+              //   transformData={selectLastHalfYear}
+            />
           </div>
         </div>
       </div>

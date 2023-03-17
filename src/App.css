@@ -67,6 +67,7 @@ h2 {
 a.active {
   color: white;
 }
+
 .icon-bg {
   margin: 0 1em;
   padding: 0.65em 0.75em 0.35em 0.75em;
@@ -173,6 +174,12 @@ a.active {
   .about-item {
     height: 125px;
     width: 125px;
+    border: 1px solid orangered;
+  }
+  .about-item:hover {
+    height: 125px;
+    width: 125px;
+    border: 2px solid orangered;
   }
   .about-items-container {
     display: grid;
@@ -259,6 +266,14 @@ a.active {
   .about-item {
     height: 225px;
     width: 225px;
+    transition: 0.2s;
+    border: 1px solid orangered;
+  }
+  .about-item:hover {
+    padding: 1px;
+    border: 2px solid orangered;
+    /* margin-left: 1px;
+    margin-top: -1px; */
   }
   .about-items-container {
     display: grid;

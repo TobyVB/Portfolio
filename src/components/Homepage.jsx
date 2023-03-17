@@ -10,7 +10,6 @@ import {
 export default function Homepage() {
   const scrollBody = useRef();
   const [background, setBackground] = useState("bg-starter");
-  // const [added, setAdded] = useState(false);
   const [textClass, setTextClass] = useState("textstarter");
   let added = false;
 
@@ -24,14 +23,12 @@ export default function Homepage() {
         if (added) {
           setTextClass("textLeave");
           setBackground("homepage-bg");
-          // setAdded(false);
           added = false;
         }
       } else if (textsLoc < scrollLoc + 700 && scrollLoc - textsLoc < 1000) {
         if (!added) {
           setTextClass("textEnter");
           setBackground("homepage-bg-after");
-          // setAdded(true);
           added = true;
         }
       }
