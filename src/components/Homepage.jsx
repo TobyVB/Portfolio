@@ -9,9 +9,11 @@ import {
 
 export default function Homepage() {
   const scrollBody = useRef();
-  const [background, setBackground] = useState("homepage-bg");
-  const [added, setAdded] = useState(false);
+  const [background, setBackground] = useState("bg-starter");
+  // const [added, setAdded] = useState(false);
   const [textClass, setTextClass] = useState("textstarter");
+  let added = false;
+
   useEffect(() => {
     const interval = setInterval(() => {
       const texts = document.querySelector(".homepage-introduction");
@@ -22,13 +24,15 @@ export default function Homepage() {
         if (added) {
           setTextClass("textLeave");
           setBackground("homepage-bg");
-          setAdded(false);
+          // setAdded(false);
+          added = false;
         }
       } else if (textsLoc < scrollLoc + 700 && scrollLoc - textsLoc < 1000) {
         if (!added) {
           setTextClass("textEnter");
           setBackground("homepage-bg-after");
-          setAdded(true);
+          // setAdded(true);
+          added = true;
         }
       }
     }, 250);
@@ -109,7 +113,7 @@ export default function Homepage() {
         }}
       ></div>
       {/* ######################################################### */}
-      <div style={{ padding: "10em 0 5em 0" }}>
+      <div style={{ padding: "10em 2em 5em 2em" }}>
         <div className="section">
           <div style={{ margin: "0 1em", textAlign: "left" }}>
             <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
@@ -140,13 +144,10 @@ export default function Homepage() {
           <div
             style={{
               marginTop: "3em",
-
               borderRadius: "100%",
               height: "250px",
               width: "250px",
-              // border: "2px dotted red"
               background: "rgba(255, 69, 0, .5)",
-              // border: "1px solid orangered",
             }}
             className="homepage-pic1"
           >
@@ -172,7 +173,6 @@ export default function Homepage() {
                 backgroundSize: "100%",
               }}
             ></div>
-            {/* image */}
           </div>
         </div>
         <div>

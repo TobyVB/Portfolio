@@ -42,6 +42,22 @@
     background-size: 200%;
   }
 }
+@keyframes homepageRevertAnim {
+  from {
+    background-size: 130%;
+  }
+  to {
+    background-size: 100%;
+  }
+}
+@keyframes homepageMobileRevertAnim {
+  from {
+    background-size: 200%;
+  }
+  to {
+    background-size: 150%;
+  }
+}
 
 h2 {
   font-size: 2.5rem;
@@ -68,7 +84,7 @@ a.active {
 }
 .breathing {
   animation-name: breathAnim;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -79,7 +95,7 @@ a.active {
     background-size: 100%;
   }
   to {
-    background-size: 102%;
+    background-size: 103%;
     transform: rotate(-0.2deg);
   }
 }
@@ -131,19 +147,39 @@ a.active {
   .homepage-jumbo-text {
     font-size: 1.75rem;
   }
+  .bg-starter {
+    background-size: 150%;
+    height: 100vh;
+    width: 100vw;
+  }
   .homepage-bg {
     background-size: 150%;
     height: 100vh;
     width: 100vw;
+    animation-name: homepageMobileRevertAnim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: smooth;
   }
   .homepage-bg-after {
     height: 100vh;
     width: 100vw;
     background-size: 200%;
     animation-name: homepageMobileAnim;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: smooth;
+  }
+  .about-item {
+    height: 125px;
+    width: 125px;
+  }
+  .about-items-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 70%;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 700px) {
@@ -176,6 +212,7 @@ a.active {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 5em;
     margin-bottom: 10em;
   }
   .section2 {
@@ -196,19 +233,39 @@ a.active {
     float: right;
     margin: 1em 0;
   }
+  .bg-starter {
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+  }
   .homepage-bg {
     background-size: 100%;
     height: 100vh;
     width: 100vw;
+    animation-name: homepageRevertAnim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: smooth;
   }
   .homepage-bg-after {
     height: 100vh;
     width: 100vw;
     background-size: 130%;
     animation-name: homepageAnim;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: smooth;
+  }
+  .about-item {
+    height: 225px;
+    width: 225px;
+  }
+  .about-items-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 70%;
+    margin: 0 auto;
   }
 }
 
