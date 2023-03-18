@@ -49,7 +49,7 @@ export default function Homepage() {
         >
           <p>
             I fell in love with programming and I have at least learnt
-            something, I think… 🤷‍♂️
+            something, I think…
           </p>
           <p>I am fluent in classics like C++, Javascript and Python.</p>
           <p>
@@ -113,13 +113,13 @@ export default function Homepage() {
       <div style={{ padding: "10em 2em 5em 2em" }}>
         <div className="section">
           <div style={{ margin: "0 1em", textAlign: "left" }}>
-            <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
+            {/* <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
               Hello! 👋
-            </h2>
+            </h2> */}
             <h2 className="homepage-jumbo-text" style={{ marginBottom: "2em" }}>
-              I'M{" "}
+              {/* I'M{" "} */}
               <span className="clr-1" style={{ fontWeight: "600" }}>
-                TOBY VANBAAST
+                TOBY VAN BAAST
               </span>
             </h2>
             <TypeText />
@@ -134,7 +134,9 @@ export default function Homepage() {
             }}
           ></div>
         </div>
-        <h2>LET ME INTRODUCE MYSELF</h2>
+        <h2>
+          <span className="waive">👋</span> Greetings!
+        </h2>
         <div className="section2">
           <Introduction />
 

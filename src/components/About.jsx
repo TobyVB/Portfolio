@@ -1,5 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import GitHubCalendar from "react-github-calendar";
+import {
+  UilGithub,
+  UilTwitter,
+  UilLinkedin,
+  UilFacebook,
+  UilJavaScript,
+  UilReact,
+  UilCodeBranch,
+} from "@iconscout/react-unicons";
 
 export default function About() {
   const scrollBody = useRef();
@@ -24,35 +33,49 @@ export default function About() {
 
   // skills data
   const skillData = [
-    { name: "JS" },
-    { name: "Node" },
-    { name: "React" },
-    { name: "MongoDB" },
-    { name: "Next" },
-    { name: "Git" },
-    { name: "Firebase" },
-    { name: "Python" },
-    { name: "jQuery" },
+    { name: "url(../../javascript.svg)", size: "50%" },
+    { name: "url(../../nodejs-icon.svg)", size: "45%" },
+    { name: "url(../../react.svg)", size: "50%" },
+    { name: "url(../../mongodb-icon.svg)", size: "25%" },
+    { name: "url(../../nextjs-icon.svg)", size: "50%" },
+    { name: "url(../../git-icon.svg)", size: "50%" },
+    { name: "url(../../firebase.svg)", size: "30%" },
+    { name: "url(../../jquery.svg)", size: "60%" },
   ];
 
   const toolData = [
-    { name: "vscode" },
-    { name: "postman" },
-    { name: "heroku" },
-    { name: "vercel" },
+    {
+      name: "url(../../visual-studio-code.svg)",
+      size: "50%",
+    },
+    {
+      name: "url(../../postman-icon.svg)",
+      size: "50%",
+    },
+    {
+      name: "url(../../heroku-icon.svg)",
+      size: "50%",
+    },
+    {
+      name: "url(../../vercel.svg)",
+      size: "65%",
+    },
   ];
 
   function Skills() {
     return skillData.map((skill) => {
       return (
-        <div
-          className="about-item"
-          style={{
-            borderRadius: "5px",
-            margin: "0 auto",
-          }}
-        >
-          <p>{skill.name}</p>
+        <div className="about-item-container">
+          <div
+            className="about-item"
+            style={{
+              borderRadius: "5px",
+              backgroundImage: `${skill.name}`,
+              backgroundPosition: "center",
+              backgroundSize: `${skill.size}`,
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
         </div>
       );
     });
@@ -61,13 +84,18 @@ export default function About() {
   function Tools() {
     return toolData.map((tool) => {
       return (
-        <div
-          className="about-item"
-          style={{
-            borderRadius: "5px",
-          }}
-        >
-          <p>{tool.name}</p>
+        <div className="about-item-container">
+          <div
+            className="about-item"
+            style={{
+              borderRadius: "5px",
+
+              backgroundImage: `${tool.name}`,
+              backgroundPosition: "center",
+              backgroundSize: `${tool.size}`,
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
         </div>
       );
     });
@@ -144,11 +172,12 @@ export default function About() {
               <Tools />
             </div>
           </div>
-          <div style={{ width: "80%", margin: "0 auto" }}>
+          <div style={{ width: "80%", margin: "0 auto", overflow: "scroll" }}>
             <h2>Git Activity</h2>
             <GitHubCalendar
               username="TobyVB"
               color="orangered"
+              style={{ margin: "0 auto" }}
               //   transformData={selectLastHalfYear}
             />
           </div>
