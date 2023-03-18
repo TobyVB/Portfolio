@@ -4,6 +4,7 @@ import GitHubCalendar from "react-github-calendar";
 export default function About() {
   const scrollBody = useRef();
   const contentRef = useRef();
+  const [background, setBackground] = useState("bg-before");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,48 +28,78 @@ export default function About() {
   //   };
 
   // skills data
+  const [animateClass, setAnimateClass] = useState("");
+  let added = false;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const skills = document.querySelector(".about-items-container");
+      const skillsLoc = skills.getBoundingClientRect().top;
+      const scrollLoc = scrollBody.current.scrollTop - 150;
+      console.log("scroll " + scrollLoc + " text: " + skillsLoc);
+      if (skillsLoc > scrollLoc + 700) {
+        if (added) {
+          added = false;
+          setAnimateClass("");
+          setBackground("homepage-bg-after");
+        }
+      } else if (skillsLoc < scrollLoc + 700 && scrollLoc - skillsLoc < 1000) {
+        if (!added) {
+          added = true;
+          setAnimateClass("animateSkill");
+          setBackground("homepage-bg");
+        }
+      }
+    }, 250);
+    return () => clearInterval(interval);
+  }, []);
+
   const skillData = [
-    { name: "url(../../javascript.svg)", size: "50%" },
-    { name: "url(../../nodejs-icon.svg)", size: "45%" },
-    { name: "url(../../react.svg)", size: "50%" },
-    { name: "url(../../mongodb-icon.svg)", size: "25%" },
-    { name: "url(../../nextjs-icon.svg)", size: "50%" },
-    { name: "url(../../git-icon.svg)", size: "50%" },
-    { name: "url(../../firebase.svg)", size: "30%" },
-    { name: "url(../../jquery.svg)", size: "60%" },
+    { name: "url(../../javascript.svg)", size: "50%", delay: ".15s" },
+    { name: "url(../../nodejs-icon.svg)", size: "45%", delay: ".30s" },
+    { name: "url(../../react.svg)", size: "50%", delay: ".45s" },
+    { name: "url(../../mongodb-icon.svg)", size: "25%", delay: ".6s" },
+    { name: "url(../../nextjs-icon.svg)", size: "50%", delay: ".75s" },
+    { name: "url(../../git-icon.svg)", size: "50%", delay: ".9s" },
+    { name: "url(../../firebase.svg)", size: "30%", delay: "1.05s" },
+    { name: "url(../../jquery.svg)", size: "60%", delay: "1.2s" },
   ];
 
   const toolData = [
     {
       name: "url(../../visual-studio-code.svg)",
       size: "50%",
+      delay: "2.5s",
     },
     {
       name: "url(../../postman-icon.svg)",
       size: "50%",
+      delay: "2.65s",
     },
     {
       name: "url(../../heroku-icon.svg)",
       size: "50%",
+      delay: "2.8s",
     },
     {
       name: "url(../../vercel.svg)",
       size: "65%",
+      delay: "2.95s",
     },
   ];
 
   function Skills() {
     return skillData.map((skill) => {
       return (
-        <div className="about-item-container">
+        <div className={`about-item-container`}>
           <div
-            className="about-item"
+            className={`about-item ${animateClass}`}
             style={{
               borderRadius: "5px",
               backgroundImage: `${skill.name}`,
               backgroundPosition: "center",
               backgroundSize: `${skill.size}`,
               backgroundRepeat: "no-repeat",
+              animationDelay: `${skill.delay}`,
             }}
           ></div>
         </div>
@@ -81,14 +112,14 @@ export default function About() {
       return (
         <div className="about-item-container">
           <div
-            className="about-item"
+            className={`about-item ${animateClass}`}
             style={{
               borderRadius: "5px",
-
               backgroundImage: `${tool.name}`,
               backgroundPosition: "center",
               backgroundSize: `${tool.size}`,
               backgroundRepeat: "no-repeat",
+              animationDelay: `${tool.delay}`,
             }}
           ></div>
         </div>
@@ -99,10 +130,11 @@ export default function About() {
   return (
     <div ref={scrollBody}>
       <div
+        className={background}
         style={{
           opacity: "15%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../canyon1.avif)",
+          backgroundImage: "url(../../canyon3.avif)",
           display: "block",
           position: "fixed",
           height: "100vh",
@@ -152,7 +184,7 @@ export default function About() {
             ></div>
           </div>
           <div style={{ margin: "0 auto" }}>
-            <h2>
+            <h2 className="item-container-title">
               Professional <span className="clr-1">Skillset</span>
             </h2>
             <div className="about-items-container">
@@ -160,7 +192,7 @@ export default function About() {
             </div>
           </div>
           <div>
-            <h2>
+            <h2 className="item-container-title">
               <span className="clr-1">Tools</span> I use
             </h2>
             <div className="about-items-container">

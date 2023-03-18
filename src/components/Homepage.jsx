@@ -11,6 +11,7 @@ export default function Homepage() {
   const scrollBody = useRef();
   const [background, setBackground] = useState("bg-starter");
   const [textClass, setTextClass] = useState("textstarter");
+  const [waive, setWaive] = useState("waive-start");
   let added = false;
 
   useEffect(() => {
@@ -27,12 +28,14 @@ export default function Homepage() {
         if (added) {
           setTextClass("textLeave");
           setBackground("homepage-bg");
+          setWaive("waive-start");
           added = false;
         }
       } else if (textsLoc < scrollLoc + 700 && scrollLoc - textsLoc < 1000) {
         if (!added) {
           setTextClass("textEnter");
           setBackground("homepage-bg-after");
+          setWaive("waive");
           added = true;
         }
       }
@@ -75,6 +78,7 @@ export default function Homepage() {
       <h3>
         <TypeAnimation
           sequence={[
+            1000,
             "Developer",
             1000, // Waits 1s
             "Freelancer",
@@ -98,6 +102,24 @@ export default function Homepage() {
       </h3>
     );
   }
+  function TobyVanBaast() {
+    return (
+      <h3>
+        <TypeAnimation
+          sequence={[
+            "Toby Van Baast",
+            // () => {
+            //   console.log("Done typing!"); // Place optional callbacks anywhere in the array
+            // },
+          ]}
+          wrapper="div"
+          cursor={false}
+          style={{ fontSize: "3rem", color: "orangered", fontWeight: "400" }}
+          speed="50"
+        />
+      </h3>
+    );
+  }
   return (
     <div ref={scrollBody}>
       <div
@@ -113,17 +135,15 @@ export default function Homepage() {
           zIndex: "-1",
         }}
       ></div>
+      <div style={{ position: "fixed", bottom: "3em", left: "5em" }}>down</div>
       {/* ######################################################### */}
       <div style={{ padding: "10em 2em 5em 2em" }}>
         <div className="section">
           <div style={{ margin: "0 1em", textAlign: "left" }}>
-            {/* <h2 className="homepage-jumbo-text" style={{ lineHeight: "0" }}>
-              Hello! 👋
-            </h2> */}
             <h2 className="homepage-jumbo-text" style={{ marginBottom: "2em" }}>
               {/* I'M{" "} */}
               <span className="clr-1" style={{ fontWeight: "600" }}>
-                TOBY VAN BAAST
+                <TobyVanBaast />
               </span>
             </h2>
             <TypeText />
@@ -139,7 +159,10 @@ export default function Homepage() {
           ></div>
         </div>
         <h2>
-          <span className="waive">👋</span> Greetings!
+          <span style={{ marginRight: "1em" }} className={waive}>
+            👋
+          </span>
+          Greetings!
         </h2>
         <div className="section2">
           <Introduction />

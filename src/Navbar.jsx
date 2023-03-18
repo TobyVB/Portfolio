@@ -16,7 +16,7 @@ const Navbar = () => {
   const [shrink, setShrink] = useState("");
   const [fade, setFade] = useState("");
 
-  const toggleNav = () => {
+  const toggleNav = (value) => {
     if (navOpen === true) {
       setFade("fade");
       setShrink("shrink");
@@ -26,13 +26,14 @@ const Navbar = () => {
         setFade("");
       }, 250);
     } else {
-      setFade("fade");
-      setTimeout(() => {
-        setNavOpen((prev) => !prev);
-        setFade("");
-      }, 250);
+      if (value !== "hp") {
+        setFade("fade");
+        setTimeout(() => {
+          setNavOpen((prev) => !prev);
+          setFade("");
+        }, 250);
+      }
     }
-
     console.log("test");
   };
 
@@ -40,7 +41,9 @@ const Navbar = () => {
     <>
       <div className="nav-link-outer-container">
         <div className="nav-link-container">
-          <NavLink to="/">TV</NavLink>
+          <span onClick={() => toggleNav("hp")} className="nav-link">
+            <NavLink to="/">TV</NavLink>
+          </span>
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
             <span onClick={() => toggleNav()} className="nav-link">
@@ -50,7 +53,7 @@ const Navbar = () => {
               </NavLink>
             </span>
             <span onClick={() => toggleNav()} className="nav-link">
-              <NavLink>
+              <NavLink to="/projects">
                 <UilWindow size="20" color="white" /> Projects
                 <div className="underline bg-1"></div>
               </NavLink>
