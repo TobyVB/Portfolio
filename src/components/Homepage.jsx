@@ -14,6 +14,10 @@ export default function Homepage() {
   let added = false;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       const texts = document.querySelector(".homepage-introduction");
       const textsLoc = texts.getBoundingClientRect().top;

@@ -1,18 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import GitHubCalendar from "react-github-calendar";
-import {
-  UilGithub,
-  UilTwitter,
-  UilLinkedin,
-  UilFacebook,
-  UilJavaScript,
-  UilReact,
-  UilCodeBranch,
-} from "@iconscout/react-unicons";
 
 export default function About() {
   const scrollBody = useRef();
   const contentRef = useRef();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   //   const selectLastHalfYear = (contributions) => {
   //     const currentYear = new Date().getFullYear();

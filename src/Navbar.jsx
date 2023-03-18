@@ -43,31 +43,32 @@ const Navbar = () => {
           <NavLink to="/">TV</NavLink>
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
-            <span className="nav-link">
+            <span onClick={() => toggleNav()} className="nav-link">
               <NavLink to="/about">
                 <UilUser size="20" color="white" /> About
                 <div className="underline bg-1"></div>
               </NavLink>
             </span>
-            <span className="nav-link">
+            <span onClick={() => toggleNav()} className="nav-link">
               <NavLink>
                 <UilWindow size="20" color="white" /> Projects
                 <div className="underline bg-1"></div>
               </NavLink>
             </span>
-            <span className="nav-link">
+            <span onClick={() => toggleNav()} className="nav-link">
               <NavLink>
                 <UilFileAlt size="20" color="white" /> Resume
                 <div className="underline bg-1"></div>
               </NavLink>
             </span>
-            <span className="nav-link">
+            <span onClick={() => toggleNav()} className="nav-link">
               <NavLink>
                 <UilPen size="20" color="white" /> Blogs
                 <div className="underline bg-1"></div>
               </NavLink>
             </span>
             <span
+              onClick={() => toggleNav()}
               className="nav-link-git"
               style={{
                 borderRadius: "5px",
