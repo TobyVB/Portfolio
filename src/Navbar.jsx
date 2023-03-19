@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   UilCodeBranch,
   UilFavorite,
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="nav-link-outer-container">
         <div className="nav-link-container">
           <span onClick={() => toggleNav("hp")} className="nav-link">
-            <NavLink to="/">TV</NavLink>
+            <NavLink to="/">Home</NavLink>
           </span>
 
           <div className={navOpen ? `nav-links ${shrink}` : "nav-links-closed"}>
@@ -59,17 +59,17 @@ const Navbar = () => {
               </NavLink>
             </span>
             <span onClick={() => toggleNav()} className="nav-link">
-              <NavLink>
+              <NavLink to="/resume">
                 <UilFileAlt size="20" color="white" /> Resume
                 <div className="underline bg-1"></div>
               </NavLink>
             </span>
-            <span onClick={() => toggleNav()} className="nav-link">
+            {/* <span onClick={() => toggleNav()} className="nav-link">
               <NavLink>
                 <UilPen size="20" color="white" /> Blogs
                 <div className="underline bg-1"></div>
               </NavLink>
-            </span>
+            </span> */}
             <span
               onClick={() => toggleNav()}
               className="nav-link-git"
@@ -78,10 +78,19 @@ const Navbar = () => {
                 boxShadow: "0px 0px 2px orangered",
               }}
             >
-              <NavLink>
+              {/* <Link
+                to={{ pathname: "https://github.com/TobyVB" }}
+                target="_blank"
+              > */}
+              <a
+                onClick={() =>
+                  window.open(`${"https://github.com/TobyVB"}`, "_blank")
+                }
+              >
                 <UilCodeBranch size="20" color="white" />
                 <UilFavorite size="20" color="white" />
-              </NavLink>
+              </a>
+              {/* </Link> */}
             </span>
           </div>
 

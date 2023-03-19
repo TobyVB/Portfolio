@@ -1,4 +1,11 @@
+import { useEffect, useState } from "react";
 export default function Projects() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  //   const [open, setOpen] = useState(false);
+
   const projectData = [
     {
       path: "https://user-images.githubusercontent.com/98196156/221370173-e6f67b4e-ae06-41b4-8b98-82f5f365e61e.png",
@@ -30,36 +37,105 @@ export default function Projects() {
       title: "Movie DB App",
       info: "This movie database web app uses an API provided from the The Movie Database website.",
       github: "https://github.com/TobyVB/movieDB",
-      demo: "https://quiz-app-29f85.web.app",
+      demo: "https://tobyvb-movie-db.vercel.app/",
     },
     {
-      path: "https://tobyvbsblog.vercel.app/",
+      path: "https://user-images.githubusercontent.com/98196156/226164053-2a55833c-6c09-42c9-9514-e9d665980a7f.png",
       size: "100%",
       title: "Blog App",
       info: "This Blog web app was made by following the NextJS documentation",
-      github: "https://github.com/TobyVB/Blog/edit/main/README.md",
+      github: "https://github.com/TobyVB/Blog",
       demo: "https://tobyvbsblog.vercel.app/",
     },
   ];
 
+  //   function aspectRatio(startW, startH, scale) {
+  //      return console.log("new width ="+startW*scale+", new height ="+startH*scale)
+  //   }
   function ProjectsArray() {
     return projectData.map((project) => {
       return (
-        <div className={`about-item-container2`}>
+        <>
+          <h3>{project.title}</h3>
+
           <div
-            className={`about-item2`}
+            className="project-outer"
             style={{
-              borderRadius: "5px",
-              backgroundSize: `${project.size}`,
-              backgroundImage: `url(${project.path})`,
-              width: "560px",
-              height: "360px",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              margin: "auto",
+              width: "392px",
+              height: "252px",
+              margin: "auto auto 3em auto",
+              overflow: "hidden",
+              paddingTop: "1em",
             }}
-          ></div>
-        </div>
+          >
+            <div
+              className={
+                project.size === "40%"
+                  ? "project-mobile-inner"
+                  : "project-inner"
+              }
+              style={{
+                borderRadius: "5px",
+                backgroundImage: `url(${project.path})`,
+                width: "364px",
+                height: "234px",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                margin: "auto",
+              }}
+            ></div>
+            <div
+              className="project-btn-containers"
+              style={{
+                margin: "0 auto auto",
+                position: "absolute",
+                left: "0",
+                right: "0",
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "3em",
+              }}
+            >
+              <div className="project-btn">
+                <a onClick={() => window.open(`${project.github}`, "_blank")}>
+                  github
+                </a>
+              </div>
+              {/* <div className="project-btn">
+                <a onClick={() => setOpen(project.title)}>?</a>
+              </div> */}
+
+              {/* <div
+                style={{
+                  width: "100%",
+                  display: `${open !== project.title ? "none" : ""}`,
+                }}
+              >
+                <div
+                  style={{
+                    position: "fixed",
+                    width: "400px",
+                    padding: "1em",
+                    borderRadius: "3px",
+                    left: "0",
+                    right: "0",
+                    top: "50%",
+                    margin: "auto",
+                    background: "black",
+                  }}
+                >
+                  {project.info}
+                </div>
+              </div> */}
+
+              <div className="project-btn">
+                <a onClick={() => window.open(`${project.demo}`, "_blank")}>
+                  demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </>
       );
     });
   }
@@ -78,8 +154,8 @@ export default function Projects() {
           zIndex: "-1",
         }}
       ></div>
-      <div style={{ padding: "10em 0 5em 0" }}>
-        <h2>My Projects</h2>
+      <div style={{ padding: "10em 0 1em 0" }}>
+        <h2 style={{ lineHeight: "0" }}>My Projects</h2>
         <p>Some projects I made</p>
       </div>
       <div className="about-items-container2">
