@@ -191,9 +191,9 @@ a.active {
     width: 124px;
   }
   .about-item-container:hover .about-item {
-    padding: 2px;
+    /* padding: 2px;
     margin: -2px auto auto -2px;
-    border: 2px solid orangered;
+    border: 2px solid orangered; */
   }
   .about-items-container {
     display: grid;
@@ -236,8 +236,8 @@ a.active {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 2.5em;
-    margin-bottom: 5em;
+    margin-top: 5em;
+    margin-bottom: 10em;
   }
   .section2 {
     display: flex;
@@ -301,9 +301,9 @@ a.active {
     width: 184px;
   }
   .about-item-container:hover .about-item {
-    padding: 2px;
+    /* padding: 2px;
     margin: -2px auto auto -2px;
-    border: 2px solid orangered;
+    border: 2px solid orangered; */
   }
   .about-items-container {
     display: grid;
@@ -516,5 +516,28 @@ h3 div {
     padding: 5px;
     border: 2px solid orangered;
     margin: -5px auto auto -5px;
+  }
+}
+.goDown {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+
+  border-top: 40px solid rgba(255, 255, 255, 0.3);
+  animation-name: goDownAnim;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+@keyframes goDownAnim {
+  from {
+    opacity: 20%;
+    margin-bottom: 0;
+  }
+  to {
+    opacity: 50%;
+    margin-bottom: -20px;
   }
 }

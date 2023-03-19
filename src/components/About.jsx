@@ -1,6 +1,31 @@
 import { useEffect, useState, useRef } from "react";
 import GitHubCalendar from "react-github-calendar";
 
+function Percentage() {
+  const [percent, setPercent] = useState();
+  const [pos, setPos] = useState("arrowAnim");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      var h = document.documentElement,
+        b = document.body,
+        st = "scrollTop",
+        sh = "scrollHeight";
+
+      setPercent(
+        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+      );
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div>
+      {/* <p style={{ fontSize: "2rem" }}>{Math.ceil(percent)}%</p> */}
+      <p>{percent < 20 && <div className="goDown"></div>}</p>
+    </div>
+  );
+}
+
 export default function About() {
   const scrollBody = useRef();
   const contentRef = useRef();
@@ -182,6 +207,18 @@ export default function About() {
                 backgroundPosition: "center",
               }}
             ></div>
+          </div>
+          <div
+            style={{
+              display: "inline-flex",
+              position: "fixed",
+              bottom: "3em",
+              width: "100%",
+              left: "0",
+              justifyContent: "center",
+            }}
+          >
+            <Percentage />
           </div>
           <div style={{ margin: "0 auto" }}>
             <h2 className="item-container-title">

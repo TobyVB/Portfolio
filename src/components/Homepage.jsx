@@ -5,13 +5,39 @@ import {
   UilTwitter,
   UilLinkedin,
   UilFacebook,
+  UilAngleDown,
 } from "@iconscout/react-unicons";
+function Percentage() {
+  const [percent, setPercent] = useState();
+  const [pos, setPos] = useState("arrowAnim");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      var h = document.documentElement,
+        b = document.body,
+        st = "scrollTop",
+        sh = "scrollHeight";
+
+      setPercent(
+        ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+      );
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div>
+      {/* <p style={{ fontSize: "2rem" }}>{Math.ceil(percent)}%</p> */}
+      <p>{percent < 20 && <div className="goDown"></div>}</p>
+    </div>
+  );
+}
 
 export default function Homepage() {
   const scrollBody = useRef();
   const [background, setBackground] = useState("bg-starter");
   const [textClass, setTextClass] = useState("textstarter");
   const [waive, setWaive] = useState("waive-start");
+  const [arrowSize, setArrowSize] = useState(60);
   let added = false;
 
   useEffect(() => {
@@ -120,6 +146,7 @@ export default function Homepage() {
       </h3>
     );
   }
+
   return (
     <div ref={scrollBody}>
       <div
@@ -135,10 +162,10 @@ export default function Homepage() {
           zIndex: "-1",
         }}
       ></div>
-      <div style={{ position: "fixed", bottom: "3em", left: "5em" }}>down</div>
+
       {/* ######################################################### */}
       <div style={{ padding: "10em 2em 5em 2em" }}>
-        <div className="section">
+        <div className="section" style={{ justifyContent: "space-between" }}>
           <div style={{ margin: "0 1em", textAlign: "left" }}>
             <h2 className="homepage-jumbo-text" style={{ marginBottom: "2em" }}>
               {/* I'M{" "} */}
@@ -157,6 +184,18 @@ export default function Homepage() {
               backgroundSize: "100%",
             }}
           ></div>
+        </div>
+        <div
+          style={{
+            display: "inline-flex",
+            position: "fixed",
+            bottom: "3em",
+            width: "100%",
+            left: "0",
+            justifyContent: "center",
+          }}
+        >
+          <Percentage />
         </div>
         <h2>
           <span style={{ marginRight: "1em" }} className={waive}>
