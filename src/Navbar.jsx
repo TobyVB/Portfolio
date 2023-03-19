@@ -90,7 +90,7 @@ const Navbar = () => {
               className={navOpen ? "burger " + fade : "burger2 " + fade}
               onClick={fade === "" && toggleNav}
             >
-              <UilBars size="30" color="orangeRed" />
+              <UilBars size="30" color="white" />
             </span>
           ) : (
             <span

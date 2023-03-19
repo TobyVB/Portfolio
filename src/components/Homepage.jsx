@@ -154,7 +154,7 @@ export default function Homepage() {
         style={{
           opacity: "25%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../canyon.avif)",
+          backgroundImage: "url(../../background/canyon.avif)",
           display: "block",
           position: "fixed",
           height: "100vh",

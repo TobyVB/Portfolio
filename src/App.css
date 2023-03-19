@@ -505,8 +505,10 @@ h3 div {
 }
 .animateSkill {
   animation: aboutItemAnim;
-  animation-duration: 0.3s;
+  animation-duration: 0.75s;
   animation-iteration-count: 1;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
 }
 @keyframes aboutItemAnim {
   from {
@@ -516,6 +518,7 @@ h3 div {
     padding: 5px;
     border: 2px solid orangered;
     margin: -5px auto auto -5px;
+    background-size: 25%;
   }
 }
 .goDown {

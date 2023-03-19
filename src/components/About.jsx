@@ -79,36 +79,73 @@ export default function About() {
   }, []);
 
   const skillData = [
-    { name: "url(../../javascript.svg)", size: "50%", delay: ".15s" },
-    { name: "url(../../nodejs-icon.svg)", size: "45%", delay: ".30s" },
-    { name: "url(../../react.svg)", size: "50%", delay: ".45s" },
-    { name: "url(../../mongodb-icon.svg)", size: "25%", delay: ".6s" },
-    { name: "url(../../nextjs-icon.svg)", size: "50%", delay: ".75s" },
-    { name: "url(../../git-icon.svg)", size: "50%", delay: ".9s" },
-    { name: "url(../../firebase.svg)", size: "30%", delay: "1.05s" },
-    { name: "url(../../jquery.svg)", size: "60%", delay: "1.2s" },
+    {
+      name: "url(../../tech-stack-icons/javascript.svg)",
+      size: "50%",
+      delay: ".15s",
+    },
+    {
+      name: "url(../../tech-stack-icons/nodejs-icon.svg)",
+      size: "45%",
+      delay: ".30s",
+    },
+    {
+      name: "url(../../tech-stack-icons/react.svg)",
+      size: "50%",
+      delay: ".45s",
+    },
+    {
+      name: "url(../../tech-stack-icons/mongodb-icon.svg)",
+      size: "25%",
+      delay: ".6s",
+    },
+    {
+      name: "url(../../tech-stack-icons/nextjs-icon.svg)",
+      size: "50%",
+      delay: ".75s",
+    },
+    {
+      name: "url(../../tech-stack-icons/git-icon.svg)",
+      size: "50%",
+      delay: ".9s",
+    },
+    {
+      name: "url(../../tech-stack-icons/firebase.svg)",
+      size: "30%",
+      delay: "1.05s",
+    },
+    {
+      name: "url(../../tech-stack-icons/jquery.svg)",
+      size: "60%",
+      delay: "1.2s",
+    },
   ];
 
   const toolData = [
     {
-      name: "url(../../visual-studio-code.svg)",
+      name: "url(../../tech-stack-icons/visual-studio-code.svg)",
       size: "50%",
       delay: "2.5s",
     },
     {
-      name: "url(../../postman-icon.svg)",
+      name: "url(../../tech-stack-icons/postman-icon.svg)",
       size: "50%",
       delay: "2.65s",
     },
     {
-      name: "url(../../heroku-icon.svg)",
+      name: "url(../../tech-stack-icons/heroku-icon.svg)",
       size: "50%",
       delay: "2.8s",
     },
     {
-      name: "url(../../vercel.svg)",
+      name: "url(../../tech-stack-icons/vercel.svg)",
       size: "65%",
       delay: "2.95s",
+    },
+    {
+      name: "url(../../tech-stack-icons/vite.svg)",
+      size: "50%",
+      delay: "3.1s",
     },
   ];
 
@@ -159,7 +196,7 @@ export default function About() {
         style={{
           opacity: "15%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../canyon3.avif)",
+          backgroundImage: "url(../../background/canyon3.avif)",
           display: "block",
           position: "fixed",
           height: "100vh",
