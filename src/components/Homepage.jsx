@@ -261,18 +261,39 @@ export default function Homepage() {
             with me
           </p>
           <div className="homepage-icons">
-            <div className="icon-bg">
-              <UilGithub size="30" color={`rgb(${color})`} />
-            </div>
+            <a
+              onClick={() =>
+                window.open(`${"https://github.com/TobyVB"}`, "_blank")
+              }
+            >
+              <div className="icon-bg">
+                <UilGithub size="30" color={`rgb(${color})`} />
+              </div>
+            </a>
             <div className="icon-bg">
               <UilTwitter size="30" color={`rgb(${color})`} />
             </div>
-            <div className="icon-bg">
-              <UilLinkedin size="30" color={`rgb(${color})`} />
-            </div>
-            <div className="icon-bg">
-              <UilFacebook size="30" color={`rgb(${color})`} />
-            </div>
+            <a
+              onClick={() =>
+                window.open(
+                  `${"https://www.linkedin.com/in/tobyvanbaast/"}`,
+                  "_blank"
+                )
+              }
+            >
+              <div className="icon-bg">
+                <UilLinkedin size="30" color={`rgb(${color})`} />
+              </div>
+            </a>
+            <a
+              onClick={() =>
+                window.open(`${"https://www.facebook.com/TobyVB"}`, "_blank")
+              }
+            >
+              <div className="icon-bg">
+                <UilFacebook size="30" color={`rgb(${color})`} />
+              </div>
+            </a>
           </div>
         </div>
         {/* ######################################################### */}
