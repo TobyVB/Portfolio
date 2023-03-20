@@ -194,7 +194,7 @@ export default function About() {
       <div
         className={background}
         style={{
-          opacity: "15%",
+          opacity: "10%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon3.avif)",
           display: "block",
@@ -222,15 +222,19 @@ export default function About() {
                 from <span className="clr-1">Austin, Texas</span>.
               </p>
               <p>
-                I am a junior pursuing IMSC in Maths and Computing in BIT Mesra.
+                I am a self-taught developer who has spent most of and the
+                majority of my days the past several years coding.
               </p>
               <p style={{ paddingTop: "1em" }}>
                 Apart from coding, some other activities that I love to do!
               </p>
               <ul>
-                <li>Playing Games</li>
-                <li>Writing Tech Blogs</li>
-                <li>Travelling</li>
+                <li>Learning about new technology</li>
+                <li>Learning about performance psychology</li>
+                <li>
+                  Trying new foods and seeing new venues for entertainment and
+                  recreation
+                </li>
               </ul>
             </div>
             <div

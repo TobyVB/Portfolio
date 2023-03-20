@@ -236,8 +236,9 @@ a.active {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 5em;
-    margin-bottom: 10em;
+    margin: 7em 10% 10em 10%;
+    /* margin-top: 5em;
+    margin-bottom: 10em; */
   }
   .section2 {
     display: flex;
@@ -386,7 +387,7 @@ a.active {
 a.active:hover {
   transition: 0.5s;
   color: white;
-  /* color: orangered; */
+  color: orangered;
 }
 .underline {
   height: 3px;

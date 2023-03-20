@@ -5,11 +5,9 @@ import {
   UilTwitter,
   UilLinkedin,
   UilFacebook,
-  UilAngleDown,
 } from "@iconscout/react-unicons";
 function Percentage() {
   const [percent, setPercent] = useState();
-  const [pos, setPos] = useState("arrowAnim");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,7 +15,6 @@ function Percentage() {
         b = document.body,
         st = "scrollTop",
         sh = "scrollHeight";
-
       setPercent(
         ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
       );
@@ -26,18 +23,19 @@ function Percentage() {
   }, []);
   return (
     <div>
-      {/* <p style={{ fontSize: "2rem" }}>{Math.ceil(percent)}%</p> */}
       <p>{percent < 20 && <div className="goDown"></div>}</p>
     </div>
   );
 }
 
 export default function Homepage() {
+  const color = "255, 69, 0";
+  // const color = "7, 190, 184";
+
   const scrollBody = useRef();
   const [background, setBackground] = useState("bg-starter");
   const [textClass, setTextClass] = useState("textstarter");
   const [waive, setWaive] = useState("waive-start");
-  const [arrowSize, setArrowSize] = useState(60);
   let added = false;
 
   useEffect(() => {
@@ -81,19 +79,22 @@ export default function Homepage() {
           className={`homepage-introduction ${textClass}`}
         >
           <p>
-            I fell in love with programming and I have at least learnt
-            something, I think…
-          </p>
-          <p>I am fluent in classics like C++, Javascript and Python.</p>
-          <p>
-            My field of Interest's are building new Web Technologies and
-            Products and also in areas related to Deep Learning and Natural
-            Launguage Processing.
+            In looking for a career that would satisy my desire to create and
+            problem solve, I found programming…
           </p>
           <p>
-            Whenever possible, I also apply my passion for developing products
-            with Node.js and Modern Javascript Library and Frameworks like
-            React.js and Next.js
+            I started off programming games in GML, to making websites with
+            Django (Python), to now creating websites with JavaScript and React
+            the past couple years.
+          </p>
+          <p>
+            My interests are in building Web Technologies and Products that
+            improve the user's quality of life.
+          </p>
+          <p>
+            Staying informed on developments in the tech industry as whole is
+            important to me, as well as making my best effort to learn
+            technologies that are relevant to my current practice.
           </p>
         </div>
       </div>
@@ -122,7 +123,12 @@ export default function Homepage() {
           wrapper="div"
           cursor={false}
           repeat={Infinity}
-          style={{ fontSize: "2rem", color: "orangered", fontWeight: "400" }}
+          style={{
+            fontSize: "2rem",
+            color: `rgb(${color})`,
+            fontWeight: "400",
+            lineHeight: ".8em",
+          }}
           speed="10"
         />
       </h3>
@@ -140,7 +146,12 @@ export default function Homepage() {
           ]}
           wrapper="div"
           cursor={false}
-          style={{ fontSize: "3rem", color: "orangered", fontWeight: "400" }}
+          style={{
+            fontSize: "3rem",
+            color: `rgb(${color})`,
+            fontWeight: "400",
+            lineHeight: ".8em",
+          }}
           speed="50"
         />
       </h3>
@@ -152,7 +163,7 @@ export default function Homepage() {
       <div
         className={background}
         style={{
-          opacity: "25%",
+          opacity: "15%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon.avif)",
           display: "block",
@@ -167,9 +178,12 @@ export default function Homepage() {
       <div style={{ padding: "10em 2em 5em 2em" }}>
         <div className="section" style={{ justifyContent: "space-between" }}>
           <div style={{ margin: "0 1em", textAlign: "left" }}>
-            <h2 className="homepage-jumbo-text" style={{ marginBottom: "2em" }}>
+            <h2
+              className="homepage-jumbo-text"
+              style={{ color: `rgb(${color})`, marginBottom: "2em" }}
+            >
               {/* I'M{" "} */}
-              <span className="clr-1" style={{ fontWeight: "600" }}>
+              <span style={{ color: `rgb(${color})`, fontWeight: "600" }}>
                 <TobyVanBaast />
               </span>
             </h2>
@@ -212,7 +226,7 @@ export default function Homepage() {
               borderRadius: "100%",
               height: "250px",
               width: "250px",
-              background: "rgba(255, 69, 0, .5)",
+              background: `rgba(${color},.5)`,
             }}
             className="homepage-pic1"
           >
@@ -222,7 +236,7 @@ export default function Homepage() {
                 borderRadius: "100%",
                 height: "250px",
                 width: "250px",
-                border: "5px dashed orangered",
+                border: `5px dashed ${`rgb(${color})`}`,
                 marginLeft: "-5.5px",
                 marginTop: "-5px",
               }}
@@ -243,20 +257,21 @@ export default function Homepage() {
         <div>
           <h2 style={{ marginBottom: "0" }}>FIND ME ON</h2>
           <p style={{ margin: "0 auto 3em auto" }}>
-            Feel free to <span className="clr-1">connect</span> with me
+            Feel free to <span style={{ color: `rgb(${color})` }}>connect</span>{" "}
+            with me
           </p>
           <div className="homepage-icons">
             <div className="icon-bg">
-              <UilGithub size="30" color="orangered" />
+              <UilGithub size="30" color={`rgb(${color})`} />
             </div>
             <div className="icon-bg">
-              <UilTwitter size="30" color="orangered" />
+              <UilTwitter size="30" color={`rgb(${color})`} />
             </div>
             <div className="icon-bg">
-              <UilLinkedin size="30" color="orangered" />
+              <UilLinkedin size="30" color={`rgb(${color})`} />
             </div>
             <div className="icon-bg">
-              <UilFacebook size="30" color="orangered" />
+              <UilFacebook size="30" color={`rgb(${color})`} />
             </div>
           </div>
         </div>
