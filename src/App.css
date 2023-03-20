@@ -207,6 +207,18 @@ a.active {
   .item-container-title {
     line-height: 0em;
   }
+  .nav-links {
+    animation-name: navAnimation;
+    animation-duration: 0.35s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+  .shrink {
+    animation-name: navAnimation2;
+    animation-duration: 0.35s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
 }
 @media screen and (min-width: 700px) {
   .nav-links {
@@ -315,19 +327,6 @@ a.active {
     width: 70%;
     margin: 0 auto 4em auto;
   }
-}
-
-.nav-links {
-  animation-name: navAnimation;
-  animation-duration: 0.35s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-.shrink {
-  animation-name: navAnimation2;
-  animation-duration: 0.35s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
 }
 
 @keyframes navAnimation {

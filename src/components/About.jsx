@@ -263,7 +263,7 @@ export default function About() {
           </div>
           <div style={{ margin: "0 auto" }}>
             <h2 className="item-container-title">
-              Professional <span className="clr-1">Skillset</span>
+              <span className="clr-1">Skillset</span>
             </h2>
             <div className="about-items-container">
               <Skills />
