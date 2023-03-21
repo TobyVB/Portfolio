@@ -9,7 +9,7 @@ export default function Resume() {
     <div>
       <div
         style={{
-          opacity: "15%",
+          opacity: "35%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon3.avif)",
           display: "block",

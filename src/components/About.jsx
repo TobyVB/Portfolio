@@ -194,7 +194,7 @@ export default function About() {
       <div
         className={background}
         style={{
-          opacity: "10%",
+          opacity: "30%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon3.avif)",
           display: "block",
