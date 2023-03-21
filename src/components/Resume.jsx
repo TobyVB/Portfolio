@@ -17,6 +17,7 @@ export default function Resume() {
           height: "100vh",
           width: "100vw",
           zIndex: "-1",
+          backgroundSize: "100%",
         }}
       ></div>
       <div>
@@ -35,7 +36,7 @@ export default function Resume() {
               <a
                 className="resume-btn"
                 onClick={() =>
-                  window.open("url(../../Resume-March-2023-copy.pdf", "_blank")
+                  window.open("url(../../resume-march-2023.pdf", "_blank")
                 }
               >
                 download
@@ -46,8 +47,8 @@ export default function Resume() {
                 border: "1px solid red",
                 margin: "auto",
                 backgroundPosition: "center",
-                maxHeight: "100%",
-                maxWidth: "80%",
+                maxHeight: "150vh",
+                maxWidth: "80vw",
                 objectFit: "contain",
               }}
               src="../../resume-march-2023.jpg"
@@ -56,7 +57,7 @@ export default function Resume() {
               <a
                 className="resume-btn"
                 onClick={() =>
-                  window.open("url(../../Resume-March-2023-copy.pdf", "_blank")
+                  window.open("url(../../resume-march-2023.pdf", "_blank")
                 }
               >
                 download
