@@ -144,7 +144,7 @@ export default function Projects() {
     <div>
       <div
         style={{
-          opacity: "15%",
+          opacity: "35%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon1.avif)",
           display: "block",

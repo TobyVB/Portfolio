@@ -163,7 +163,7 @@ export default function Homepage() {
       <div
         className={background}
         style={{
-          opacity: "35%",
+          opacity: "45%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon.avif)",
           display: "block",
