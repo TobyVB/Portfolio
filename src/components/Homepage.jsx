@@ -29,6 +29,7 @@ function Percentage() {
 }
 
 export default function Homepage() {
+  // const color = "255, 255, 255";
   const color = "255, 69, 0";
   // const color = "7, 190, 184";
 
@@ -75,7 +76,10 @@ export default function Homepage() {
         }}
       >
         <div
-          style={{ margin: "0 auto" }}
+          style={{
+            margin: "0 auto",
+            padding: "1em",
+          }}
           className={`homepage-introduction ${textClass}`}
         >
           <p>
@@ -123,11 +127,11 @@ export default function Homepage() {
           wrapper="div"
           cursor={false}
           repeat={Infinity}
+          className="typeText"
           style={{
-            fontSize: "2rem",
             color: `rgb(${color})`,
             fontWeight: "400",
-            lineHeight: ".8em",
+            // textShadow: " 1px 1px 2px black",
           }}
           speed="10"
         />
@@ -146,11 +150,11 @@ export default function Homepage() {
           ]}
           wrapper="div"
           cursor={false}
+          className="typeText"
           style={{
-            fontSize: "3rem",
             color: `rgb(${color})`,
             fontWeight: "400",
-            lineHeight: ".8em",
+            textShadow: " 1px 1px 2px black",
           }}
           speed="50"
         />
@@ -163,7 +167,7 @@ export default function Homepage() {
       <div
         className={background}
         style={{
-          opacity: "55%",
+          opacity: "30%",
           backgroundPosition: "center",
           backgroundImage: "url(../../background/canyon.avif)",
           display: "block",
@@ -193,8 +197,6 @@ export default function Homepage() {
             className="homepage-pic2 breathing"
             style={{
               backgroundImage: "url(../../Online-world-amico.png)",
-              height: "350px",
-              width: "350px",
               backgroundSize: "100%",
             }}
           ></div>
