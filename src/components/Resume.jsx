@@ -11,7 +11,7 @@ export default function Resume() {
         style={{
           opacity: "35%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../background/canyon3.avif)",
+          backgroundImage: "url(../../background/starrysky.jpg)",
           display: "block",
           position: "fixed",
           height: "100vh",

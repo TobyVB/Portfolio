@@ -146,7 +146,7 @@ export default function Projects() {
         style={{
           opacity: "30%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../background/canyon1.avif)",
+          backgroundImage: "url(../../background/starrysky.jpg)",
           display: "block",
           position: "fixed",
           height: "100vh",

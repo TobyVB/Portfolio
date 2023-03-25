@@ -101,10 +101,13 @@ a.active {
 }
 
 .icon-bg {
-  margin: 0 1em;
+  margin: 0 0.5em;
   padding: 0.65em 0.75em 0.35em 0.75em;
   border-radius: 100%;
-  background: white;
+  /* background: rgba(0, 0, 0, 1); */
+  /* background: rgb(255, 255, 255); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .homepage-icons {
@@ -206,11 +209,11 @@ a.active {
   .about-item {
     height: 120px;
     width: 120px;
-    border: 1px solid orangered;
+    border: 1px solid rgb(38, 159, 235);
     transition: 0.25s;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 
     /* animation: aboutItemAnim;
     animation-duration: 0.3s;
@@ -250,12 +253,16 @@ a.active {
   .homepage-introduction {
     text-align: left;
     font-size: 1.25rem;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
   }
   .typeText {
     line-height: 0rem;
     font-size: 2rem;
+  }
+  .about-pic {
+    height: 80vw;
+    width: 80vw;
   }
 }
 @media screen and (min-width: 700px) {
@@ -309,8 +316,8 @@ a.active {
   }
   .homepage-pic2 {
     /* border: 3px dashed red; */
-    height: 300px;
-    min-width: 300px;
+    height: 35vw;
+    min-width: 35vw;
     float: right;
     margin: 1em 0;
   }
@@ -346,10 +353,10 @@ a.active {
   .about-item {
     height: 180px;
     width: 180px;
-    border: 1px solid orangered;
+    border: 1px solid rgb(38, 159, 235);
     transition: 0.25s;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 
     /* animation: aboutItemAnim;
     animation-duration: 0.3s;
@@ -376,6 +383,10 @@ a.active {
     font-size: 1.25rem;
     width: 100%;
     max-width: 600px;
+  }
+  .about-pic {
+    height: 40vw;
+    width: 40vw;
   }
 }
 
@@ -459,10 +470,10 @@ a.active:hover {
   margin-bottom: 2px;
 }
 .clr-1 {
-  color: orangered;
+  color: rgb(38, 159, 235);
 }
 .bg-1 {
-  background: orangered;
+  background: rgb(38, 159, 235);
 }
 h3 div {
   height: 1rem;
@@ -578,7 +589,7 @@ h3 div {
   }
   to {
     padding: 5px;
-    border: 2px solid orangered;
+    border: 2px solid white;
     margin: -5px auto auto -5px;
     background-size: 25%;
   }

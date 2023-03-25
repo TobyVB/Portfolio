@@ -30,8 +30,13 @@ function Percentage() {
 
 export default function Homepage() {
   // const color = "255, 255, 255";
-  const color = "255, 69, 0";
+  // const color = "255, 69, 0";
   // const color = "7, 190, 184";
+  // const color = "255, 255, 255";
+  // const color = "205, 242, 82";
+  // const color = "139, 245, 115";
+  // const color = "49, 176, 255";
+  const color = "38,159, 235";
 
   const scrollBody = useRef();
   const [background, setBackground] = useState("bg-starter");
@@ -131,7 +136,6 @@ export default function Homepage() {
           style={{
             color: `rgb(${color})`,
             fontWeight: "400",
-            // textShadow: " 1px 1px 2px black",
           }}
           speed="10"
         />
@@ -169,7 +173,7 @@ export default function Homepage() {
         style={{
           opacity: "30%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../background/canyon.avif)",
+          backgroundImage: "url(../../background/starrysky.jpg)",
           display: "block",
           position: "fixed",
           height: "100vh",
@@ -196,7 +200,7 @@ export default function Homepage() {
           <div
             className="homepage-pic2 breathing"
             style={{
-              backgroundImage: "url(../../Online-world-amico.png)",
+              backgroundImage: "url(../../Online-world-amico3.png)",
               backgroundSize: "100%",
             }}
           ></div>
@@ -238,7 +242,7 @@ export default function Homepage() {
                 borderRadius: "100%",
                 height: "250px",
                 width: "250px",
-                border: `5px dashed ${`rgb(${color})`}`,
+                border: `5px dotted ${`rgb(${color})`}`,
                 marginLeft: "-5.5px",
                 marginTop: "-5px",
               }}

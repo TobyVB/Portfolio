@@ -27,6 +27,8 @@ function Percentage() {
 }
 
 export default function About() {
+  const color = "38,159, 235";
+
   const scrollBody = useRef();
   const contentRef = useRef();
   const [background, setBackground] = useState("bg-before");
@@ -35,22 +37,22 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
-  //   const selectLastHalfYear = (contributions) => {
-  //     const currentYear = new Date().getFullYear();
-  //     const currentMonth = new Date().getMonth();
-  //     const shownMonths = 6;
+  const selectLastHalfYear = (contributions) => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const shownMonths = 6;
 
-  //     return contributions.filter((day) => {
-  //       const date = new Date(day.date);
-  //       const monthOfDay = date.getMonth();
+    return contributions.filter((day) => {
+      const date = new Date(day.date);
+      const monthOfDay = date.getMonth();
 
-  //       return (
-  //         date.getFullYear() === currentYear &&
-  //         monthOfDay > currentMonth - shownMonths &&
-  //         monthOfDay <= currentMonth
-  //       );
-  //     });
-  //   };
+      return (
+        date.getFullYear() === currentYear &&
+        monthOfDay > currentMonth - shownMonths &&
+        monthOfDay <= currentMonth
+      );
+    });
+  };
 
   // skills data
   const [animateClass, setAnimateClass] = useState("");
@@ -194,9 +196,9 @@ export default function About() {
       <div
         className={background}
         style={{
-          opacity: "50%",
+          opacity: "30%",
           backgroundPosition: "center",
-          backgroundImage: "url(../../background/canyon3.avif)",
+          backgroundImage: "url(../../background/starrysky.jpg)",
           display: "block",
           position: "fixed",
           height: "100vh",
@@ -238,10 +240,9 @@ export default function About() {
               </ul>
             </div>
             <div
+              className="about-pic"
               style={{
-                backgroundImage: "url(../../Innovation-rafiki.png)",
-                height: "400px",
-                width: "400px",
+                backgroundImage: "url(../../Innovation-amico.png)",
                 backgroundSize: "100%",
                 margin: "0 auto",
                 backgroundRepeat: "no-repeat",
@@ -281,9 +282,11 @@ export default function About() {
             <h2>Git Activity</h2>
             <GitHubCalendar
               username="TobyVB"
-              color="orangered"
+              color="rgb(38, 159, 235)"
+              // color="rgb(105, 205, 235)"
+              className="cheese"
               style={{ margin: "0 auto" }}
-              //   transformData={selectLastHalfYear}
+              // transformData={selectLastHalfYear}
             />
           </div>
         </div>
