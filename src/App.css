@@ -449,7 +449,7 @@ a.active {
 a.active:hover {
   transition: 0.5s;
   color: white;
-  color: orangered;
+  color: rgb(38, 159, 235);
 }
 .underline {
   height: 3px;
@@ -477,12 +477,6 @@ a.active:hover {
 }
 h3 div {
   height: 1rem;
-}
-.green {
-  color: yellowgreen;
-}
-.red {
-  color: red;
 }
 /* ############################### */
 .textEnter {
@@ -591,7 +585,7 @@ h3 div {
     padding: 5px;
     border: 2px solid white;
     margin: -5px auto auto -5px;
-    background-size: 25%;
+    background-size: 35%;
   }
 }
 .goDown {
@@ -627,12 +621,12 @@ h3 div {
 .project-outer {
   border-radius: 3px;
   transition: 0.5s;
-  border: 1px solid rgba(255, 69, 0, 0.5);
+  border: 1px solid rgba(38, 159, 235, 0.5);
   background: rgba(255, 255, 255, 0.2);
 }
 .project-outer:hover {
-  border: 1px solid rgba(255, 69, 0, 1);
-  box-shadow: 0px 0px 50px rgba(255, 69, 0, 1);
+  border: 1px solid rgb(38, 159, 235);
+  box-shadow: 0px 0px 50px rgb(38, 159, 235);
   background: rgba(255, 255, 255, 0.5);
 }
 .project-mobile-inner {
@@ -643,7 +637,7 @@ h3 div {
   background-size: 31.5%;
 }
 .project-btn {
-  background: rgba(255, 69, 0, 0.5);
+  background: rgba(38, 159, 235, 0.5);
   padding: 0.5em 1em;
   border-radius: 3px;
 }
@@ -654,7 +648,7 @@ h3 div {
 }
 .project-outer:hover .project-btn {
   transition-delay: 0.25s;
-  background: rgba(255, 69, 0, 1);
+  background: rgb(38, 159, 235);
   font-size: 1.2rem;
 }
 
@@ -672,17 +666,17 @@ h3 div {
   font-size: 2rem;
   cursor: pointer;
   transition: 0.5s;
-  color: orangered;
-  text-shadow: 0px 2px 2px orangered;
+  color: rgb(38, 159, 235);
+  text-shadow: 0px 2px 2px rgb(38, 159, 235);
 }
 .project-outer:hover .info-btn {
   font-size: 3rem;
-  color: orangered;
+  color: rgb(38, 159, 235);
   text-shadow: 0px 2px 2px white;
 }
 .resume-btn {
   display: inline-block;
-  background: orangered;
+  background: rgb(38, 159, 235);
   color: white;
   border-radius: 4px;
   border: 1px solid transparent;

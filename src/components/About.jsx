@@ -279,7 +279,9 @@ export default function About() {
             </div>
           </div>
           <div style={{ width: "80%", margin: "0 auto", overflow: "scroll" }}>
-            <h2>Git Activity</h2>
+            <h2>
+              <span style={{ color: `rgb(${color})` }}>Git</span> Activity
+            </h2>
             <GitHubCalendar
               username="TobyVB"
               color="rgb(38, 159, 235)"

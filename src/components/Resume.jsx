@@ -44,7 +44,7 @@ export default function Resume() {
             </div>
             <img
               style={{
-                border: "1px solid red",
+                border: "1px solid rgb(38, 159, 235)",
                 margin: "auto",
                 backgroundPosition: "center",
                 maxHeight: "150vh",
